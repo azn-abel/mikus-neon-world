@@ -1,12 +1,19 @@
 {
   "name": "wolfpack-mirai-2023",
+  "private": true,
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "detect-it": "^4.0.1",
     "textalive-app-api": "^0.3.2",
     "three": "^0.152.2"
+  },
+  "devDependencies": {
+    "vite": "^4.3.2"
   }
 }

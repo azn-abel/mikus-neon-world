@@ -1,13 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="jp">
     <head>
         <title>TextAlive App API | lyric sheet example</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&amp;display=swap">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/regular.min.css">
         <link rel="stylesheet" href="./style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
         <script src="https://api.songle.jp/v2/api.js"></script>
     </head>
     <body>
+        <canvas id="bg"></canvas>
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn">Select Song</button>
           <div id="myDropdown" class="dropdown-content">
@@ -53,8 +56,10 @@
         <div id="seekbar">
         <div></div>
         </div>
+        
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/textalive-app-api/dist/index.js"></script>
         <script src="./script.js"></script>
+        <script type="module" src="./animation.js"></script>
     </body>
 </html>

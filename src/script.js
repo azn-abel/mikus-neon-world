@@ -182,7 +182,7 @@ function beginPlayback() {
   
       // 500ms先に発声される文字を取得
       let current = c || player.video.firstChar;
-      while (current && current.startTime < position + 500) {
+      while (current && current.startTime < position) {
         // 新しい文字が発声されようとしている
         if (c !== current) {
           newChar(current);
@@ -247,6 +247,7 @@ seekbar.addEventListener("click", (e) => {
   return false;
 });
 
+var prevClasses = []
 /**
  * 新しい文字の発声時に呼ばれる
  * Called when a new character is being vocalized
@@ -254,6 +255,11 @@ seekbar.addEventListener("click", (e) => {
 function newChar(current) {
   // 品詞 (part-of-speech)
   // https://developer.textalive.jp/packages/textalive-app-api/interfaces/iword.html#pos
+  
+  if (prevClasses.includes("lastChar")) {
+    resetChars();
+  }
+
   const classes = [];
   if (
     current.parent.pos === "N" ||
@@ -276,6 +282,8 @@ function newChar(current) {
       classes.push("firstCharInEnglishWord");
     }
   }
+
+  prevClasses = classes;
 
   // noun, lastChar クラスを必要に応じて追加
   const div = document.createElement("div");
