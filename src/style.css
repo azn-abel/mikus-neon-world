@@ -311,3 +311,11 @@ canvas {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+@media only screen and (max-width: 650px) {
+  /* For mobile phones: */
+  .dropdown {
+    top: 90px;
+    left: 0px;
+  }
+}
