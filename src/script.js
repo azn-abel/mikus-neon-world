@@ -75,6 +75,7 @@ const SongList = [
   }
 ]
 
+var currentIdx = 0;
 var currentUrl = SongList[0].url;
 var currentBeatId = SongList[0].beatId;
 var currentChordId = SongList[0].chordId;
@@ -97,6 +98,7 @@ const bar = document.querySelector("#bar");
 const textContainer = document.querySelector("#text");
 const seekbar = document.querySelector("#seekbar");
 const paintedSeekbar = seekbar.querySelector("div");
+const dropdownButton = document.querySelector("#dropbtn");
 let b, c;
 
 function beginPlayback() {
@@ -176,7 +178,7 @@ function beginPlayback() {
       }
   
       // 巻き戻っていたら歌詞表示をリセットする
-      if (c && c.startTime > position + 1000) {
+      if (c && c.startTime > position + 2000) {
         resetChars();
       }
   
@@ -293,9 +295,9 @@ function newChar(current) {
   const container = document.createElement("div");
   container.className = classes.join(" ");
   container.appendChild(div);
-  container.addEventListener("click", () => {
-    player.requestMediaSeek(current.startTime);
-  });
+  // container.addEventListener("click", () => {
+  //   player.requestMediaSeek(current.startTime);
+  // });
   textContainer.appendChild(container);
 }
 
@@ -309,6 +311,8 @@ function resetChars() {
     textContainer.removeChild(textContainer.firstChild);
 }
 
+dropdownButton.addEventListener("click", myFunction);
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -316,6 +320,7 @@ function myFunction() {
 }
 
 function changeSong(songIndex) {
+  currentIdx = songIndex;
   currentUrl = SongList[songIndex].url;
   currentBeatId = SongList[songIndex].beatId;
   currentChordId = SongList[songIndex].chordId;

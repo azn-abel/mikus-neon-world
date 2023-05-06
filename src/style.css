@@ -162,7 +162,7 @@ canvas {
  */
 @keyframes showLyrics {
   0% {
-    transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 0, 0);
     opacity: 0;
   }
   100% {
@@ -187,7 +187,7 @@ canvas {
 /* 歌詞 / Lyrics */
 #lyrics {
   z-index: 0;
-  padding: 3em 0 5em 0;
+  padding: 3em 0 0 0;
   line-height: 2em;
   font-size: 36px;
   font-family: "Shippori Mincho B1", serif;
@@ -198,6 +198,9 @@ canvas {
 
   /* 歌詞をちょっと回転させる / Rotate text */
   transform: rotateX(10deg) rotateY(-10deg);
+}
+#text {
+  z-index: 1
 }
 #text > div {
   /* 文字ごとに改行しない / No line-break per char */
