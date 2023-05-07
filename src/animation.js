@@ -22,7 +22,7 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(20);
+camera.position.setZ(5);
 
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -59,15 +59,17 @@ skewb.position.x = -1.5;
 skewb.position.y = 0;
 skewb.position.z = 0;
 
-const gridHelper = new THREE.GridHelper(200, 200);
-scene.add(gridHelper);
+// const gridHelper = new THREE.GridHelper(200, 50);
+// scene.add(gridHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.minDistance = 20;
+controls.minDistance = 5;
 controls.maxDistance = 50;
 controls.maxPolarAngle = Math.PI / 2 - 0.1;
 controls.enableZoom = !isMobileDevice;
-controls.enablePan = !isMobileDevice;
+// controls.enablePan = !isMobileDevice;
+controls.enablePan = false;
+controls.enableRotate = false;
 
 const handleOrientationChange = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -89,7 +91,7 @@ composer.addPass(renderPass);
 
 //w, h, intensity, radius, threshold
 const bloomPass = new UnrealBloomPass(
-  new THREE.Vector2(window.innerWidth, window.innerHeight), 1, 2, .1
+  new THREE.Vector2(window.innerWidth, window.innerHeight), 0.5, 1, .1
 );
 
 composer.addPass(bloomPass);
@@ -105,9 +107,9 @@ const animate = () => {
 
     x = clock.getElapsedTime();
 
-    cube.scale.y = sum2 /  25000;
-    skewb.scale.y = sum1 / 25000;
-    pube.scale.y = sum3 /  25000;
+    cube.scale.y = sum2 /  15000;
+    skewb.scale.y = sum1 / 15000;
+    pube.scale.y = sum3 /  15000;
 
     requestAnimationFrame(animate);
 
