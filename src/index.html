@@ -27,19 +27,21 @@
             <div id="artist">artist: <span>-</span></div>
             <div id="song">song: <span>-</span></div>
           </div>
-          <!-- Navigation links (hidden by default) -->
-          <div id="myLinks">
+          
+          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+          <a href="javascript:void(0);" class="icon" onclick="burgerClick()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+
+        <!-- Navigation links (hidden by default) -->
+        <div id="myLinks">
             <option class="selection" value=0 onclick="changeSong(value)">king妃jack躍</option>
             <option class="selection" value=1 onclick="changeSong(value)">生きること</option>
             <option class="selection" value=2 onclick="changeSong(value)">唱明者</option>
             <option class="selection" value=3 onclick="changeSong(value)">ネオンライトの海を往く</option>
             <option class="selection" value=4 onclick="changeSong(value)">ミュウテイション</option>
             <option class="selection" value=5 onclick="changeSong(value)">Entrust via 39</option>
-          </div>
-          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-          <a href="javascript:void(0);" class="icon" onclick="burgerClick()">
-            <i class="fa fa-bars"></i>
-          </a>
         </div>
 
         <!-- オーバーレイ / Overlay -->
