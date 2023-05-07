@@ -26,22 +26,22 @@ camera.position.setZ(10);
 
 const geometry = new THREE.BoxGeometry();
 
-const cube1 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+const cube1 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
 scene.add(cube1);
 
-const cube2 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+const cube2 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
 scene.add(cube2);
 
-const cube3 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+const cube3 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
 scene.add(cube3);
 
-const cube4 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+const cube4 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
 scene.add(cube4);
 
-const cube5 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+const cube5 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
 scene.add(cube5);
 
-const cube6 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+const cube6 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
 scene.add(cube6);
 
 // Create wireframe edges
@@ -108,12 +108,12 @@ const animate = () => {
 
     x = clock.getElapsedTime();
 
-    cube1.scale.y = sum1 / 4000;
-    cube2.scale.y = sum2 / 4000;
-    cube3.scale.y = sum3 / 4000;
-    cube4.scale.y = sum4 / 4000;
-    cube5.scale.y = sum5 / 4000;
-    cube6.scale.y = sum6 / 4000;
+    cube1.scale.y = (sum1 / 6000) ** 2 / 2;
+    cube2.scale.y = (sum2 / 6000) ** 2 / 2;
+    cube3.scale.y = (sum3 / 6000) ** 2 / 2;
+    cube4.scale.y = (sum4 / 6000) ** 2 / 2;
+    cube5.scale.y = (sum5 / 6000) ** 2 / 2;
+    cube6.scale.y = (sum6 / 6000) ** 2 / 2;
 
     requestAnimationFrame(animate);
 
