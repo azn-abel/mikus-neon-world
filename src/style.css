@@ -184,6 +184,9 @@ canvas {
 
   /* 歌詞をちょっと回転させる / Rotate text */
   transform: rotateX(0deg) rotateY(0deg);
+
+  /* no clicking allowed */
+  pointer-events: none;
 }
 #text {
   z-index: 1;
@@ -292,6 +295,11 @@ canvas {
 .topnav a.icon:hover {
   background-color: #ddd;
   color: black;
+}
+
+/* Let mouse events pass through */
+.topnav a.icon i {
+  pointer-events: none;
 }
 
 .selection{

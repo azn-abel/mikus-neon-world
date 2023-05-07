@@ -166,12 +166,12 @@ function beginPlayback() {
       let beat = player.findBeat(position);
       if (b !== beat) {
         if (beat) {
-          requestAnimationFrame(() => {
-            bar.className = "active";
-            requestAnimationFrame(() => {
-              bar.className = "active beat";
-            });
-          });
+          // requestAnimationFrame(() => {
+          //   bar.className = "active";
+          //   requestAnimationFrame(() => {
+          //     bar.className = "active beat";
+          //   });
+          // });
         }
         b = beat;
       }
