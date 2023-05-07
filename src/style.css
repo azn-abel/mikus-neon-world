@@ -263,11 +263,14 @@ canvas {
 
 /* Hide the links inside the navigation menu (except for logo/home) */
 #myLinks {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  width: fit-content;
   z-index: 4;
   position: absolute;
+  height: 120px;
   top: 48px;
-  left: 0px;
   right: 0px;
 }
 
@@ -307,8 +310,7 @@ canvas {
   color: #ddd;
   font-family: 'Lucida Sans', Verdana, sans-serif;
   font-weight: bold;
-  z-index: 4;
-  right: 0px;
+  height: 20px;
 }
 
 .selection:hover {

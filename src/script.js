@@ -101,6 +101,7 @@ const textContainer = document.querySelector("#text");
 const seekbar = document.querySelector("#seekbar");
 const paintedSeekbar = seekbar.querySelector("div");
 const dropdownButton = document.querySelector("#dropbtn");
+const burgerMenu = document.querySelector("#burger-menu");
 let b, c;
 
 function beginPlayback() {
@@ -361,19 +362,27 @@ function changeSong(songIndex) {
 function burgerClick() {
   console.log("ello");
   var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-      x.style.display = "none";
-      console.log("1");
+  if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
+    console.log("1");
   } else {
-      x.style.display = "block";
-      console.log("2");
+    x.style.visibility = "visible";
+    console.log("2");
   }
+  // if (x.style.display === "block") {
+  //     x.style.display = "none";
+  //     console.log("1");
+  // } else {
+  //     x.style.display = "block";
+  //     console.log("2");
+  // }
 }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('.myLinks') && !event.target.matches('.icon')) {
+  console.log(event.target);
+  if (!event.target.matches('#myLinks') && !event.target.matches('.icon')) {
     var x = document.getElementById("myLinks");
-    x.style.display = "none";
+    x.style.display = "flex";
   }
 }
