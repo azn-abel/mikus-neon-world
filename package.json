@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "detect-it": "^4.0.1",
-    "textalive-app-api": "^0.3.2",
+    "textalive-app-api": "https://github.com/azn-abel/textalive-app-api/tarball/stable",
     "three": "^0.152.2"
   },
   "devDependencies": {
