@@ -115,15 +115,16 @@ function beginPlayback() {
   
         // king妃jack躍 / 宮守文学 feat. 初音ミク
         // https://developer.textalive.jp/events/magicalmirai2023/#snippets
-        player.createFromSongUrl(currentUrl, {
-          video: {
-            beatId: currentBeatId,
-            chordId: currentChordId,
-            repetitiveSegmentId: currentRepetitiveSegmentId,
-            lyricId: currentLyricId,
-            lyricDiffId: currentLyricDiffId
-          }
-        });
+        player.createFromSongUrl(currentUrl);
+        // , {
+        //   video: {
+        //     beatId: currentBeatId,
+        //     chordId: currentChordId,
+        //     repetitiveSegmentId: currentRepetitiveSegmentId,
+        //     lyricId: currentLyricId,
+        //     lyricDiffId: currentLyricDiffId
+        //   }
+        // });
       }
     },
   
