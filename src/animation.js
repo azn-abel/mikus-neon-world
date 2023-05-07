@@ -45,17 +45,17 @@ skewb.add(new THREE.LineSegments(edges, lineMaterial));
 
 // Set the position of the cube
 cube.position.x = 0;
-cube.position.y = -1;
+cube.position.y = 0;
 cube.position.z = 0;
 
 // Set the position of the pube
-pube.position.x = 0;
-pube.position.y = -1;
+pube.position.x = 1.5;
+pube.position.y = 0;
 pube.position.z = 0;
 
 // Set the position of the pube
-skewb.position.x = 0;
-skewb.position.y = -1;
+skewb.position.x = -1.5;
+skewb.position.y = 0;
 skewb.position.z = 0;
 
 const gridHelper = new THREE.GridHelper(200, 200);
@@ -81,28 +81,13 @@ var x = 0;
 const animate = () => {
 
     handleOrientationChange();
-    
-    cube.position.x = 2 * Math.sin(x);
-    cube.position.z = 2 * Math.cos(x);
-
-    pube.position.z = 2 * Math.sin(x * 2);
-    pube.position.x = 2 * Math.cos(x * 2);
-
-    skewb.position.y = 2 * Math.sin(x * 2);
 
     x = clock.getElapsedTime();
 
+    cube.scale.y = sum /  25000;
+
     requestAnimationFrame(animate);
 
-    // Rotate the cube
-    cube.rotation.x += 0.06;
-    cube.rotation.y += 0.03;
-
-    pube.rotation.x += 0.03;
-    pube.rotation.y += 0.04;
-
-    skewb.rotation.z += 0.03;
-    skewb.rotation.x += 0.04;
 
 
     // Render the scene with the camera

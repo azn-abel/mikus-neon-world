@@ -67,7 +67,7 @@ var observer = new MutationObserver(function(mutationsList) {
             if (addedNodes[i].nodeName === 'AUDIO') {
                 audioElement = addedNodes[i];
 
-                document.addEventListener("click", initializeAudio());
+                document.addEventListener("click", initializeAudio);
 
                 // Disconnect the observer since we no longer need it
                 // observer.disconnect();
@@ -77,18 +77,9 @@ var observer = new MutationObserver(function(mutationsList) {
     });
 });
   
-  // Start observing changes to the document
-function observe() {
-    observer.observe(document, { childList: true, subtree: true });
-    try {
-        document.removeEventListener('click', observe);
-    } catch {
+// Start observing changes to the document
 
-    }
-}
-// observer.observe(document, { childList: true, subtree: true });
-
-document.addEventListener('click', observe);
+observer.observe(document, { childList: true, subtree: true });
 
 function calculateSum(arr) {
     var s = 0;
