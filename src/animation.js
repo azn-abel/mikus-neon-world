@@ -2,6 +2,9 @@ import "./style.css"
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/unrealBloomPass';
 import * as detectIt from 'detect-it';
 
 const isMobileDevice = () => {
@@ -72,9 +75,27 @@ const handleOrientationChange = () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
 };
 
 window.addEventListener('resize', handleOrientationChange);
+
+//post processing
+
+const composer = new EffectComposer( renderer );
+
+const renderPass = new RenderPass( scene, camera );
+composer.addPass(renderPass);
+
+//w, h, intensity, radius, threshold
+const bloomPass = new UnrealBloomPass(
+  new THREE.Vector2(window.innerWidth, window.innerHeight), 1, 2, .1
+);
+
+composer.addPass(bloomPass);
+
+renderer.toneMapping = THREE.LinearToneMapping;
+renderer.toneMappingExposure = 3;
 
 const clock = new THREE.Clock();
 var x = 0;
@@ -92,7 +113,7 @@ const animate = () => {
 
     // Render the scene with the camera
     controls.update();
-    renderer.render(scene, camera);
+    composer.render(scene, camera);
 };
 
 // Start the animation loop
