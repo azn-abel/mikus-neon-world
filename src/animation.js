@@ -30,19 +30,19 @@ const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
 // My Cube
-const pube = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x0000ff }));
+const pube = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
 scene.add(pube);
 
-const skewb = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const skewb = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
 scene.add(skewb);
 
 // Create wireframe edges
 const edges = new THREE.EdgesGeometry(geometry);
 const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
 // const wireframe = new THREE.LineSegments(edges, lineMaterial);
-cube.add(new THREE.LineSegments(edges, lineMaterial));
-pube.add(new THREE.LineSegments(edges, lineMaterial));
-skewb.add(new THREE.LineSegments(edges, lineMaterial));
+//cube.add(new THREE.LineSegments(edges, lineMaterial));
+//pube.add(new THREE.LineSegments(edges, lineMaterial));
+//skewb.add(new THREE.LineSegments(edges, lineMaterial));
 
 // Set the position of the cube
 cube.position.x = 0;
@@ -106,7 +106,7 @@ const animate = () => {
     cube.scale.y = sum2 /  25000;
     skewb.scale.y = sum1 / 25000;
     pube.scale.y = sum3 /  25000;
-    
+
     requestAnimationFrame(animate);
 
 
