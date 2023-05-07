@@ -1,13 +1,11 @@
-var audio = new Audio('To_live.mp3');
 var audioCtx;
 var analyser;
 var audioElement;
-var dataArray;
 var sum = 0;
 
-const wrapper = () => {
-    initializeAudio(audioElement);
-}
+// const wrapper = () => {
+//     initializeAudio(audioElement);
+// }
 
 const initializeAudio = () => {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();

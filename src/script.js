@@ -1,4 +1,4 @@
-
+// import { Player, stringToDataUrl } from 'textalive-app-api';
 
 const { Player, stringToDataUrl } = TextAliveApp;
 
@@ -77,7 +77,6 @@ const SongList = [
   }
 ]
 
-var currentIdx = 0;
 var currentUrl = SongList[0].url;
 var currentBeatId = SongList[0].beatId;
 var currentChordId = SongList[0].chordId;
@@ -356,14 +355,3 @@ function changeSong(songIndex) {
 }
 
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-function burgerClick() {
-  console.log("ello");
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-    console.log("1");
-  } else {
-    x.style.display = "block";
-    console.log("2");
-  }
-}
