@@ -311,14 +311,6 @@ function resetChars() {
     textContainer.removeChild(textContainer.firstChild);
 }
 
-dropdownButton.addEventListener("click", myFunction);
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
 function changeSong(songIndex) {
   currentIdx = songIndex;
   currentUrl = SongList[songIndex].url;
@@ -352,16 +344,15 @@ function changeSong(songIndex) {
   beginPlayback();
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function burgerClick() {
+  console.log("ello");
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    console.log("1");
+  } else {
+    x.style.display = "block";
+    console.log("2");
   }
 }

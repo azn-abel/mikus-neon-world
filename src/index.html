@@ -11,9 +11,24 @@
     </head>
     <body>
         <canvas id="bg"></canvas>
-        <div class="dropdown">
-          <button class="dropbtn" id="dropbtn">Select Song</button>
-          <div id="myDropdown" class="dropdown-content">
+
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Top Navigation Menu -->
+        <div class="topnav">
+          <!-- 再生コントロール / Playback control -->
+          <div id="control" class="far">
+            <a href="#" id="play" class="disabled">&#xf144;</a>
+            <a href="#" id="stop" class="disabled">&#xf28d;</a>
+          </div>
+          <!-- アーティストと楽曲の情報 / Artist and song info -->
+          <div id="meta">
+            <div id="artist">artist: <span>-</span></div>
+            <div id="song">song: <span>-</span></div>
+          </div>
+          <!-- Navigation links (hidden by default) -->
+          <div id="myLinks">
             <option class="selection" value=0 onclick="changeSong(value)">king妃jack躍</option>
             <option class="selection" value=1 onclick="changeSong(value)">生きること</option>
             <option class="selection" value=2 onclick="changeSong(value)">唱明者</option>
@@ -21,24 +36,15 @@
             <option class="selection" value=4 onclick="changeSong(value)">ミュウテイション</option>
             <option class="selection" value=5 onclick="changeSong(value)">Entrust via 39</option>
           </div>
-        </div>
-        <!-- オーバーレイ / Overlay -->
-        <div id="overlay">
-        <p><span class="far">&#xf254;</span>now loading...</p>
+          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+          <a href="javascript:void(0);" class="icon" onclick="burgerClick()">
+            <i class="fa fa-bars"></i>
+          </a>
         </div>
 
-        <!-- ヘッダ / Header -->
-        <div id="header">
-        <!-- 再生コントロール / Playback control -->
-        <div id="control" class="far">
-            <a href="#" id="play" class="disabled">&#xf144;</a>
-            <a href="#" id="stop" class="disabled">&#xf28d;</a>
-        </div>
-        <!-- アーティストと楽曲の情報 / Artist and song info -->
-        <div id="meta">
-            <div id="artist">artist: <span>-</span></div>
-            <div id="song">song: <span>-</span></div>
-        </div>
+        <!-- オーバーレイ / Overlay -->
+        <div id="overlay">
+          <p><span class="far">&#xf254;</span><br>now loading...<br>ロード中...</p>
         </div>
 
         <!-- 音源 / Audio souce -->
