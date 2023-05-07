@@ -294,7 +294,7 @@ canvas {
 }
 
 .selection{
-  background-color: rgb(37, 37, 37);
+  background-color: #333;
   color: #ddd;
   font-family: 'Lucida Sans', Verdana, sans-serif;
   font-weight: bold;
