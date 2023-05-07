@@ -368,3 +368,11 @@ function burgerClick() {
       console.log("2");
   }
 }
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.myLinks') && !event.target.matches('.icon')) {
+    var x = document.getElementById("myLinks");
+    x.style.display = "none";
+  }
+}
