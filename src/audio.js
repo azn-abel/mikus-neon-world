@@ -40,7 +40,9 @@ const handleAudioElement = (audioElement) => {
         if (x % 100 == 0) {
             // console.log(JSON.stringify(dataArray));
             
-            console.log(sum1);              
+            console.log(sum1);  
+            console.log(sum2);            
+            console.log(sum3);            
         }
         x++;
 
@@ -48,7 +50,7 @@ const handleAudioElement = (audioElement) => {
         sum1 = calculateSum(dataArray.slice(0,200));
         sum2 = calculateSum(dataArray.slice(200,500));
         sum3 = calculateSum(dataArray.slice(500,1024)); 
-        
+
         // Process the frequency data
         // Here, you can access the frequency data in the dataArray
         // Each index in the array represents a specific frequency bin
