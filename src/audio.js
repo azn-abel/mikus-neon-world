@@ -1,7 +1,9 @@
 var audioCtx;
 var analyser;
 var audioElement;
-var sum = 0;
+var sum1 = 0;
+var sum2 = 0;
+var sum3 = 0;
 
 // const wrapper = () => {
 //     initializeAudio(audioElement);
@@ -37,13 +39,16 @@ const handleAudioElement = (audioElement) => {
     function updateFrequencyData() {
         if (x % 100 == 0) {
             // console.log(JSON.stringify(dataArray));
-            console.log(sum);              
+            
+            console.log(sum1);              
         }
         x++;
 
         analyser.getByteFrequencyData(dataArray);
-        sum = calculateSum(dataArray);
-
+        sum1 = calculateSum(dataArray.slice(0,200));
+        sum2 = calculateSum(dataArray.slice(200,500));
+        sum3 = calculateSum(dataArray.slice(500,1024)); 
+        
         // Process the frequency data
         // Here, you can access the frequency data in the dataArray
         // Each index in the array represents a specific frequency bin

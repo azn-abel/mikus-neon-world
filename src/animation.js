@@ -103,8 +103,10 @@ const animate = () => {
 
     x = clock.getElapsedTime();
 
-    cube.scale.y = sum /  25000;
-
+    cube.scale.y = sum2 /  25000;
+    skewb.scale.y = sum1 / 25000;
+    pube.scale.y = sum3 /  25000;
+    
     requestAnimationFrame(animate);
 
 
