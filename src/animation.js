@@ -22,19 +22,27 @@ const renderer = new THREE.WebGLRenderer({
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
-camera.position.setZ(5);
+camera.position.setZ(10);
 
 const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
 
-// My Cube
-const pube = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
-scene.add(pube);
+const cube1 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+scene.add(cube1);
 
-const skewb = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
-scene.add(skewb);
+const cube2 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+scene.add(cube2);
+
+const cube3 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+scene.add(cube3);
+
+const cube4 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+scene.add(cube4);
+
+const cube5 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+scene.add(cube5);
+
+const cube6 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0x00ff00 }));
+scene.add(cube6);
 
 // Create wireframe edges
 const edges = new THREE.EdgesGeometry(geometry);
@@ -45,19 +53,12 @@ const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
 //skewb.add(new THREE.LineSegments(edges, lineMaterial));
 
 // Set the position of the cube
-cube.position.x = 0;
-cube.position.y = 0;
-cube.position.z = 0;
-
-// Set the position of the pube
-pube.position.x = 1.5;
-pube.position.y = 0;
-pube.position.z = 0;
-
-// Set the position of the pube
-skewb.position.x = -1.5;
-skewb.position.y = 0;
-skewb.position.z = 0;
+cube1.position.x = -4.25;
+cube2.position.x = -2.40;
+cube3.position.x = -0.75;
+cube4.position.x =  0.75;
+cube5.position.x =  2.40;
+cube6.position.x =  4.25;
 
 // const gridHelper = new THREE.GridHelper(200, 50);
 // scene.add(gridHelper);
@@ -91,7 +92,7 @@ composer.addPass(renderPass);
 
 //w, h, intensity, radius, threshold
 const bloomPass = new UnrealBloomPass(
-  new THREE.Vector2(window.innerWidth, window.innerHeight), 0.5, 1, .1
+  new THREE.Vector2(window.innerWidth, window.innerHeight), 0.5, 0.5, .1
 );
 
 composer.addPass(bloomPass);
@@ -107,9 +108,12 @@ const animate = () => {
 
     x = clock.getElapsedTime();
 
-    cube.scale.y = sum2 /  15000;
-    skewb.scale.y = sum1 / 15000;
-    pube.scale.y = sum3 /  15000;
+    cube1.scale.y = sum1 / 4000;
+    cube2.scale.y = sum2 / 4000;
+    cube3.scale.y = sum3 / 4000;
+    cube4.scale.y = sum4 / 4000;
+    cube5.scale.y = sum5 / 4000;
+    cube6.scale.y = sum6 / 4000;
 
     requestAnimationFrame(animate);
 

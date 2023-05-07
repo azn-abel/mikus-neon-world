@@ -4,6 +4,9 @@ var audioElement;
 var sum1 = 0;
 var sum2 = 0;
 var sum3 = 0;
+var sum4 = 0;
+var sum5 = 0;
+var sum6 = 0;
 
 // const wrapper = () => {
 //     initializeAudio(audioElement);
@@ -47,9 +50,12 @@ const handleAudioElement = (audioElement) => {
         x++;
 
         analyser.getByteFrequencyData(dataArray);
-        sum1 = calculateSum(dataArray.slice(0,200));
-        sum2 = calculateSum(dataArray.slice(200,500));
-        sum3 = calculateSum(dataArray.slice(500,1024)); 
+        sum1 = calculateSum(dataArray.slice(0,125));
+        sum2 = calculateSum(dataArray.slice(125,250));
+        sum3 = calculateSum(dataArray.slice(250,375)); 
+        sum4 = calculateSum(dataArray.slice(375,500));
+        sum5 = calculateSum(dataArray.slice(500,625));
+        sum6 = calculateSum(dataArray.slice(625,1024));  
 
         // Process the frequency data
         // Here, you can access the frequency data in the dataArray

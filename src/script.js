@@ -116,6 +116,7 @@ function beginPlayback() {
         // king妃jack躍 / 宮守文学 feat. 初音ミク
         // https://developer.textalive.jp/events/magicalmirai2023/#snippets
         player.createFromSongUrl(currentUrl);
+        player.isPlaying = false;
         // , {
         //   video: {
         //     beatId: currentBeatId,
