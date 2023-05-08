@@ -25,7 +25,7 @@
           </div>
           
           <div id="settings" class="far">
-            <a href="#" id="settei" class="disabled">&#xf185;</a>
+            <a href="#" id="settei" class="disabled" onclick="openForm()">&#xf185;</a>
           </div>
           <!-- アーティストと楽曲の情報 / Artist and song info -->
           <div id="meta">
@@ -49,6 +49,14 @@
             <option class="selection" value=5 onclick="changeSong(value)">Entrust via 39</option>
         </div>
 
+        <!-- The form -->
+        <div class="form-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <h1>Login</h1>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+        
         <!-- オーバーレイ / Overlay -->
         <div id="overlay">
           <p><span class="far">&#xf254;</span><br>now loading...<br>ロード中...</p>
@@ -70,7 +78,7 @@
         <div></div>
         </div>
 
-        <img class="miku-image" id="miku-image" src="./images/hero_img_s.png" alt="Hatsune Miku">
+        <img class="miku-image" id="miku-image" src="./images/visual_2023.png" alt="Hatsune Miku">
         
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/textalive-app-api/dist/index.js"></script>

@@ -355,6 +355,9 @@ function changeSong(songIndex) {
   });
   
   overlay.className = "enabled";
+  document.querySelector("#control > a#play").className = "disabled";
+  document.querySelector("#control > a#stop").className = "disabled";
+  document.querySelector("#settings > a#settei").className = "disabled";
 
   var x = document.getElementById("myLinks");
   x.style.visibility = "hidden";
@@ -389,4 +392,20 @@ window.onclick = function(event) {
     var x = document.getElementById("myLinks");
     x.style.visibility = "hidden";
   }
+}
+
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+  overlay.className = "enabled";
+  document.querySelector("#control > a#play").className = "disabled";
+  document.querySelector("#control > a#stop").className = "disabled";
+  document.querySelector("#settings > a#settei").className = "disabled";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  overlay.className = "disabled";
+  document.querySelector("#control > a#play").className = "";
+  document.querySelector("#control > a#stop").className = "";
+  document.querySelector("#settings > a#settei").className = "";
 }
