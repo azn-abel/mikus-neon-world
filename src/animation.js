@@ -72,13 +72,13 @@ const gridHelper = new THREE.GridHelper(200, 50);
 scene.add(gridHelper);
 
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load( './images/visual_2023.png' );
+const texture = textureLoader.load( './images/city.png' );
 texture.encoding = THREE.sRGBEncoding;
 
-const planeGeometry = new THREE.PlaneGeometry( 12.38, 20.48 );
-const planeMaterial = new THREE.MeshBasicMaterial({color: 0x9f9f9f, map: texture});
+const planeGeometry = new THREE.PlaneGeometry( 192, 108 );
+const planeMaterial = new THREE.MeshBasicMaterial({color: 0x4a4a4a, map: texture});
 const plane = new THREE.Mesh( planeGeometry, planeMaterial );
-plane.position.z = -10
+plane.position.z = -30
 scene.add(plane);
 
 
@@ -142,8 +142,8 @@ const animate = () => {
 
     // Render the scene with the camera
     controls.update();
-    // composer.render(scene, camera);
-    renderer.render(scene, camera);
+    composer.render(scene, camera);
+    //renderer.render(scene, camera);
 };
 
 const updateColor = (time) => {
