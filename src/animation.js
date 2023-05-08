@@ -23,13 +23,14 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(10);
+barGraph(); // Sets cube positions based on screen resolution
 
 // num = 0xff0000;
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial();
-material.color.setRGB(Math.random(),Math.random(),Math.random());
-// {color: 0x344b2e}, 
+material.color.setRGB(0,0,0);
 
+//cubes
 const cube1 = new THREE.Mesh(geometry, material);
 scene.add(cube1);
 
@@ -52,7 +53,12 @@ scene.add(cube6);
 const edges = new THREE.EdgesGeometry(geometry);
 const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
 
-// Set the position of the cubes
+/*
+ooga
+how to make cube array
+agoo
+*/
+
 cube1.position.x = -4.25;
 cube2.position.x = -2.40;
 cube3.position.x = -0.75;
@@ -61,8 +67,8 @@ cube5.position.x =  2.40;
 cube6.position.x =  4.25;
 
 // Show grid
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(gridHelper);
+ const gridHelper = new THREE.GridHelper(200, 50);
+ scene.add(gridHelper);
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 5;
@@ -109,12 +115,12 @@ const animate = () => {
 
     x = clock.getElapsedTime();
 
-    cube1.scale.y = (sum1 / 6000) ** 2 / 2;
-    cube2.scale.y = (sum2 / 6000) ** 2 / 2;
-    cube3.scale.y = (sum3 / 6000) ** 2 / 2;
-    cube4.scale.y = (sum4 / 6000) ** 2 / 2;
-    cube5.scale.y = (sum5 / 6000) ** 2 / 2;
-    cube6.scale.y = (sum6 / 6000) ** 2 / 2;
+    cube1.scale.y = (sum1 / 6000) * 2 / 3;
+    cube2.scale.y = (sum2 / 6000) * 2 / 3;
+    cube3.scale.y = (sum3 / 6000) * 2 / 3;
+    cube4.scale.y = (sum4 / 6000) * 2 / 3;
+    cube5.scale.y = (sum5 / 6000) * 2 / 3;
+    cube6.scale.y = (sum6 / 6000) * 2 / 3;
 
     requestAnimationFrame(animate);
 
@@ -131,6 +137,23 @@ const updateColor = (time) => {
     // Only shows cyan/magenta/yellow on the cubes; they don't mix 
     material.color.setRGB(1 + Math.cos(time), 1 + Math.cos(2 + time), 1 + Math.cos(4 + time));
 }
+
+// Set the position of the cubes
+function barGraph(){
+
+    var position = [];
+    var val = Math.floor(-1 * window.innerWidth/100);
+    for(var i = 0; i < window.innerWidth; i+= 100){
+        console.log(val);
+        position.push(val);
+        val += 1.5;
+    }
+
+    for(var i = 0; i < position.length; i ++){
+        // cube.push(position[i]);
+    }
+}
+
 
 // Start the animation loop
 animate();
