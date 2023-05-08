@@ -154,6 +154,7 @@ function beginPlayback() {
       overlay.className = "disabled";
       document.querySelector("#control > a#play").className = "";
       document.querySelector("#control > a#stop").className = "";
+      document.querySelector("#settings > a#settei").className = "";
     },
   
     /* 再生位置の情報が更新されたら呼ばれる */

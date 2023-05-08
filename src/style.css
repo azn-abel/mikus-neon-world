@@ -86,9 +86,30 @@ canvas {
   color: rgb(255 148 56);
 }
 
+#settings {
+  display: inline-block;
+  padding: 3px;
+  padding-left: 1px;
+  padding-top: 9px;
+}
+#settings a.disabled {
+  opacity: 0.3;
+}
+#settings a:hover {
+  color: rgb(255 148 56);
+}
+
+#settings a{
+  color: rgb(99 208 226);
+  text-decoration: none;
+  display: inline-block;
+  padding: 3px;
+  font-size: 24px;
+}
+
 /* アーティストと楽曲の情報 / Artist and song info */
 #meta {
-  padding: 11px;
+  padding-top: 9px;
   font-size: 10.5px;
   display: inline-block;
   font-family: 'Lucida Sans', Verdana, sans-serif;
