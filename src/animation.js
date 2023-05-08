@@ -24,35 +24,35 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(10);
 
+// num = 0xff0000;
 const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial();
+material.color.setRGB(Math.random(),Math.random(),Math.random());
+// {color: 0x344b2e}, 
 
-const cube1 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube1 = new THREE.Mesh(geometry, material);
 scene.add(cube1);
 
-const cube2 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube2 = new THREE.Mesh(geometry, material);
 scene.add(cube2);
 
-const cube3 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube3 = new THREE.Mesh(geometry, material);
 scene.add(cube3);
 
-const cube4 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube4 = new THREE.Mesh(geometry, material);
 scene.add(cube4);
 
-const cube5 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube5 = new THREE.Mesh(geometry, material);
 scene.add(cube5);
 
-const cube6 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube6 = new THREE.Mesh(geometry, material);
 scene.add(cube6);
 
-// Create wireframe edges
+// Create wireframe edges *unused*
 const edges = new THREE.EdgesGeometry(geometry);
 const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
-// const wireframe = new THREE.LineSegments(edges, lineMaterial);
-//cube.add(new THREE.LineSegments(edges, lineMaterial));
-//pube.add(new THREE.LineSegments(edges, lineMaterial));
-//skewb.add(new THREE.LineSegments(edges, lineMaterial));
 
-// Set the position of the cube
+// Set the position of the cubes
 cube1.position.x = -4.25;
 cube2.position.x = -2.40;
 cube3.position.x = -0.75;
@@ -60,6 +60,7 @@ cube4.position.x =  0.75;
 cube5.position.x =  2.40;
 cube6.position.x =  4.25;
 
+// Show grid
 // const gridHelper = new THREE.GridHelper(200, 50);
 // scene.add(gridHelper);
 
@@ -117,12 +118,19 @@ const animate = () => {
 
     requestAnimationFrame(animate);
 
-
+    // Change cube color
+    updateColor(x);
+    // material.color.setRGB(35, 123, 60);
 
     // Render the scene with the camera
     controls.update();
     composer.render(scene, camera);
 };
+
+const updateColor = (time) => {
+    // Only shows cyan/magenta/yellow on the cubes; they don't mix 
+    material.color.setRGB(1 + Math.cos(time), 1 + Math.cos(2 + time), 1 + Math.cos(4 + time));
+}
 
 // Start the animation loop
 animate();
