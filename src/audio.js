@@ -1,16 +1,3 @@
-var audioCtx;
-var analyser;
-var audioElement;
-var sum1 = 0;
-var sum2 = 0;
-var sum3 = 0;
-var sum4 = 0;
-var sum5 = 0;
-var sum6 = 0;
-
-// const wrapper = () => {
-//     initializeAudio(audioElement);
-// }
 
 const initializeAudio = () => {
     audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -41,11 +28,9 @@ const handleAudioElement = (audioElement) => {
     var x = 0;
     function updateFrequencyData() {
         if (x % 100 == 0) {
-            // console.log(JSON.stringify(dataArray));
-            
-            console.log(sum1);  
-            console.log(sum2);            
-            console.log(sum3);            
+            // console.log(sum1);  
+            // console.log(sum2);            
+            // console.log(sum3);            
         }
         x++;
 

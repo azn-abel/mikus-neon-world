@@ -1,89 +1,90 @@
-// import { Player, stringToDataUrl } from 'textalive-app-api';
+import { Player, stringToDataUrl } from 'textalive-app-api';
+import SongList from './data/songs.json'
 
-const { Player, stringToDataUrl } = TextAliveApp;
+currentIdx = 0;
+currentUrl = SongList[0].url;
+currentBeatId = SongList[0].beatId;
+currentChordId = SongList[0].chordId;
+currentRepetitiveSegmentId = SongList[0].repetitiveSegmentId;
+currentLyricId = SongList[0].lyricId;
+currentLyricDiffId= SongList[0].lyricDiffId;
+// const { Player, stringToDataUrl } = TextAliveApp;
 
-const SongList = [
-  {
-      "jpTitle": "king妃jack躍",
-      "enTitle": "king ki jack yaku",
-      "jpArtist": "宮守文学 feat. 初音ミク",
-      "enArtist": "Miyamori Bungaku feat. Hatsune Miku",
-      "url": "https://piapro.jp/t/ucgN/20230110005414",
-      "beatId": 4267297,
-      "chordId": 2405019,
-      "repetitiveSegmentId": 2405019,
-      "lyricId": 56092,
-      "lyricDiffId": 9636
-  },
-  {
-      "jpTitle": "生きること",
-      "enTitle": "To live",
-      "jpArtist": "nogumi feat. 初音ミク",
-      "enArtist": "nogumi feat. Hatsune Miku",
-      "url": "https://piapro.jp/t/fnhJ/20230131212038",
-      "beatId": 4267300,
-      "chordId": 2405033,
-      "repetitiveSegmentId": 2475606,
-      "lyricId": 56131,
-      "lyricDiffId": 9638
-  },
-  {
-      "jpTitle": "唱明者",
-      "enTitle": "Shoumeisha",
-      "jpArtist": "すこやか大聖堂 feat. KAITO",
-      "enArtist": "SukoyaCathedral feat. KAITO",
-      "url": "https://piapro.jp/t/Vfrl/20230120182855",
-      "beatId": 4267334,
-      "chordId": 2405059,
-      "repetitiveSegmentId": 2475645,
-      "lyricId": 56095,
-      "lyricDiffId": 9637
-  },
-  {
-      "jpTitle": "ネオンライトの海を往く",
-      "enTitle": "Going through a sea of Neon lights",
-      "jpArtist": "Ponchi♪ feat. 初音ミク",
-      "enArtist": "Ponchi♪ feat. Hatsune Miku",
-      "url": "https://piapro.jp/t/fyxI/20230203003935",
-      "beatId": 4267373,
-      "chordId": 2405138,
-      "repetitiveSegmentId": 2475664,
-      "lyricId": 56096,
-      "lyricDiffId": 9639
-  },
-  {
-      "jpTitle": "ミュウテイション",
-      "enTitle": "Mutation",
-      "jpArtist": "Rin（Kuroneko Lounge） feat. 初音ミク",
-      "enArtist": "Rin (Kuroneko Lounge) feat. Hatsune Miku",
-      "url": "https://piapro.jp/t/Wk83/20230203141007",
-      "beatId": 4267381,
-      "chordId": 2405285,
-      "repetitiveSegmentId": 2475676,
-      "lyricId": 56097,
-      "lyricDiffId": 9640
-  },
-  {
-      "jpTitle": "Entrust via 39",
-      "enTitle": "Entrust via 39",
-      "jpArtist": "ikomai feat. 初音ミク",
-      "enArtist": "ikomai feat. Hatsune Miku",
-      "url": "https://piapro.jp/t/Ya0_/20230201235034",
-      "beatId": 4269734,
-      "chordId": 2405723,
-      "repetitiveSegmentId": 2475686,
-      "lyricId": 56098,
-      "lyricDiffId": 9643
-  }
-]
+// const SongList = [
+//   {
+//       "jpTitle": "king妃jack躍",
+//       "enTitle": "king ki jack yaku",
+//       "jpArtist": "宮守文学 feat. 初音ミク",
+//       "enArtist": "Miyamori Bungaku feat. Hatsune Miku",
+//       "url": "https://piapro.jp/t/ucgN/20230110005414",
+//       "beatId": 4267297,
+//       "chordId": 2405019,
+//       "repetitiveSegmentId": 2405019,
+//       "lyricId": 56092,
+//       "lyricDiffId": 9636
+//   },
+//   {
+//       "jpTitle": "生きること",
+//       "enTitle": "To live",
+//       "jpArtist": "nogumi feat. 初音ミク",
+//       "enArtist": "nogumi feat. Hatsune Miku",
+//       "url": "https://piapro.jp/t/fnhJ/20230131212038",
+//       "beatId": 4267300,
+//       "chordId": 2405033,
+//       "repetitiveSegmentId": 2475606,
+//       "lyricId": 56131,
+//       "lyricDiffId": 9638
+//   },
+//   {
+//       "jpTitle": "唱明者",
+//       "enTitle": "Shoumeisha",
+//       "jpArtist": "すこやか大聖堂 feat. KAITO",
+//       "enArtist": "SukoyaCathedral feat. KAITO",
+//       "url": "https://piapro.jp/t/Vfrl/20230120182855",
+//       "beatId": 4267334,
+//       "chordId": 2405059,
+//       "repetitiveSegmentId": 2475645,
+//       "lyricId": 56095,
+//       "lyricDiffId": 9637
+//   },
+//   {
+//       "jpTitle": "ネオンライトの海を往く",
+//       "enTitle": "Going through a sea of Neon lights",
+//       "jpArtist": "Ponchi♪ feat. 初音ミク",
+//       "enArtist": "Ponchi♪ feat. Hatsune Miku",
+//       "url": "https://piapro.jp/t/fyxI/20230203003935",
+//       "beatId": 4267373,
+//       "chordId": 2405138,
+//       "repetitiveSegmentId": 2475664,
+//       "lyricId": 56096,
+//       "lyricDiffId": 9639
+//   },
+//   {
+//       "jpTitle": "ミュウテイション",
+//       "enTitle": "Mutation",
+//       "jpArtist": "Rin（Kuroneko Lounge） feat. 初音ミク",
+//       "enArtist": "Rin (Kuroneko Lounge) feat. Hatsune Miku",
+//       "url": "https://piapro.jp/t/Wk83/20230203141007",
+//       "beatId": 4267381,
+//       "chordId": 2405285,
+//       "repetitiveSegmentId": 2475676,
+//       "lyricId": 56097,
+//       "lyricDiffId": 9640
+//   },
+//   {
+//       "jpTitle": "Entrust via 39",
+//       "enTitle": "Entrust via 39",
+//       "jpArtist": "ikomai feat. 初音ミク",
+//       "enArtist": "ikomai feat. Hatsune Miku",
+//       "url": "https://piapro.jp/t/Ya0_/20230201235034",
+//       "beatId": 4269734,
+//       "chordId": 2405723,
+//       "repetitiveSegmentId": 2475686,
+//       "lyricId": 56098,
+//       "lyricDiffId": 9643
+//   }
+// ]
 
-var currentIdx = 0;
-var currentUrl = SongList[0].url;
-var currentBeatId = SongList[0].beatId;
-var currentChordId = SongList[0].chordId;
-var currentRepetitiveSegmentId = SongList[0].repetitiveSegmentId;
-var currentLyricId = SongList[0].lyricId;
-var currentLyricDiffId= SongList[0].lyricDiffId;
 // TextAlive Player を初期化
 var player = new Player({
   // トークンは https://developer.textalive.jp/profile で取得したものを使う
@@ -117,7 +118,6 @@ function beginPlayback() {
         // king妃jack躍 / 宮守文学 feat. 初音ミク
         // https://developer.textalive.jp/events/magicalmirai2023/#snippets
         player.createFromSongUrl(currentUrl);
-        player.isPlaying = false;
         // , {
         //   video: {
         //     beatId: currentBeatId,
