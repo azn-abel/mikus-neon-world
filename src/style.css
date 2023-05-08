@@ -338,3 +338,12 @@ canvas {
   color: rgba(0, 0, 0, 0.5);
   background-color: #ddd;
 }
+
+.miku-image {
+  position: absolute;
+  right: 0px;
+  bottom: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  z-index: 1;
+}
