@@ -404,6 +404,25 @@ function openForm() {
 }
 
 function closeForm() {
+  var mainColor = parseInt(document.getElementById("color-picker").value.substring(1, 7), 16);
+  shadowColor = mainColor - 0x1fffff;
+  nounColor = mainColor + 0x1fffff;
+
+  if (shadowColor < 0) {
+    shadowColor = 0;
+  }
+  if (nounColor > 0xffffff) {
+    nounColor = 0xffffff;
+  }
+  console.log(mainColor);
+  console.log(shadowColor);
+  console.log(nounColor);
+  console.log("#" + mainColor.toString(16) + ", #" + shadowColor.toString(16) + ", #" + nounColor.toString(16));
+
+  document.getElementById("lyrics").style.color = "#" + mainColor.toString(16); 
+  document.getElementById("lyrics").style.textShadow = "2px 2px 3px #" + shadowColor.toString(16);
+  document.querySelectorAll(".noun").color = "#" + nounColor.toString(16); 
+
   document.getElementById("myForm").style.display = "none";
   popupOverlay.className = "disabled";
   document.querySelector("#control > a#play").className = "";
