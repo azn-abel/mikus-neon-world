@@ -64,6 +64,7 @@ canvas {
 }
 #popup-overlay > p {
   width: 100vw;
+  height: 100vh;
 }
 #popup-overlay > p > span {
   display: inline-block;
@@ -216,7 +217,7 @@ canvas {
 
 /* 歌詞 / Lyrics */
 #lyrics {
-  z-index: 0;
+  z-index: 1;
   padding: 3em 0 0 2em;
   line-height: 2em;
   font-size: 40px;
@@ -225,6 +226,8 @@ canvas {
   text-shadow: 2px 2px 3px #e4215a;
   user-select: none;
   cursor: pointer;
+  position: absolute;
+  top: 10%;
 
   /* 歌詞をちょっと回転させる / Rotate text */
   transform: rotateX(0deg) rotateY(0deg);
@@ -368,7 +371,7 @@ canvas {
   bottom: 20px;
   max-width: 90vw;
   max-height: 90vh;
-  z-index: 1;
+  z-index: 0;
 }
 
 .window-container {
