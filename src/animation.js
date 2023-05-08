@@ -17,18 +17,19 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
     antialias: true,
-    alpha: true
+    // alpha: true
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.gammaOutput = false;
 camera.position.setZ(10);
 barGraph(); // Sets cube positions based on screen resolution
 
 // num = 0xff0000;
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshBasicMaterial();
-material.color.setRGB(0,0,0);
+material.color = new THREE.Color(0x41fcf6)
 
 //cubes
 const cube1 = new THREE.Mesh(geometry, material);
@@ -67,8 +68,19 @@ cube5.position.x =  2.40;
 cube6.position.x =  4.25;
 
 // Show grid
- const gridHelper = new THREE.GridHelper(200, 50);
- scene.add(gridHelper);
+const gridHelper = new THREE.GridHelper(200, 50);
+scene.add(gridHelper);
+
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load( './images/visual_2023.png' );
+texture.encoding = THREE.sRGBEncoding;
+
+const planeGeometry = new THREE.PlaneGeometry( 12.38, 20.48 );
+const planeMaterial = new THREE.MeshBasicMaterial({color: 0x9f9f9f, map: texture});
+const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+plane.position.z = -10
+scene.add(plane);
+
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 5;
@@ -130,7 +142,8 @@ const animate = () => {
 
     // Render the scene with the camera
     controls.update();
-    composer.render(scene, camera);
+    // composer.render(scene, camera);
+    renderer.render(scene, camera);
 };
 
 const updateColor = (time) => {
