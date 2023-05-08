@@ -105,6 +105,9 @@ const dropdownButton = document.querySelector("#dropbtn");
 const burgerMenu = document.querySelector("#burger-menu");
 let b, c;
 
+//Beatbar colors
+let r1, r2, g1, g2, b1, b2;
+
 function beginPlayback() {
   player.addListener({
     /* APIの準備ができたら呼ばれる */
@@ -169,12 +172,12 @@ function beginPlayback() {
       let beat = player.findBeat(position);
       if (b !== beat) {
         if (beat) {
-          // requestAnimationFrame(() => {
-          //   bar.className = "active";
-          //   requestAnimationFrame(() => {
-          //     bar.className = "active beat";
-          //   });
-          // });
+          requestAnimationFrame(() => {
+            bar.className = "active";
+            requestAnimationFrame(() => {
+              bar.className = "active beat";
+            });
+          });
         }
         b = beat;
       }
@@ -217,6 +220,7 @@ function beginPlayback() {
   });
 }
 
+getBarColors();
 beginPlayback();
 
 /* 再生・一時停止ボタン */
@@ -403,7 +407,25 @@ function openForm() {
   document.querySelector("#settings > a#settei").className = "disabled";
 }
 
+function getBarColors() {
+  var color1 = parseInt(document.getElementById("bar-color1").value.substring(1, 7), 16);
+  var color2 = parseInt(document.getElementById("bar-color2").value.substring(1, 7), 16);
+
+  r1 = Math.floor(color1 / 0x10000);
+  r2 = Math.floor(color2 / 0x10000);
+  g1 = Math.floor(color1 / 0x100);
+  g1 = g1 % 0x100;
+  g2 = Math.floor(color2 / 0x100);
+  g2 = g2 % 0x100;
+  b1 = color1 % 0x100;
+  b2 = color2 % 0x100;
+
+  console.log( r1 + ", " + g1 + ", " + b1 );
+  console.log( r2 + ", " + g2 + ", " + b2 );
+}
+
 function closeForm() {
+  // Handle changes in font color
   var mainColor = parseInt(document.getElementById("color-picker").value.substring(1, 7), 16);
   shadowColor = mainColor - 0x1fffff;
   nounColor = mainColor + 0x1fffff;
@@ -423,6 +445,11 @@ function closeForm() {
   document.getElementById("lyrics").style.textShadow = "2px 2px 3px #" + shadowColor.toString(16);
   document.querySelectorAll(".noun").color = "#" + nounColor.toString(16); 
 
+  // Handle changes in beatbar color
+
+  getBarColors();
+
+  // Close form
   document.getElementById("myForm").style.display = "none";
   popupOverlay.className = "disabled";
   document.querySelector("#control > a#play").className = "";

@@ -121,7 +121,21 @@ renderer.toneMappingExposure = 3;
 
 const clock = new THREE.Clock();
 var x = 0;
+
+var red = r1;
+var green = g1;
+var blue = b1;
+
+var beat = b;
+
 const animate = () => {
+
+    if (beat !== b) {
+        if (b) {
+          flipColors();
+        }
+    }
+    beat = b;
 
     handleOrientationChange();
 
@@ -148,7 +162,31 @@ const animate = () => {
 
 const updateColor = (time) => {
     // Only shows cyan/magenta/yellow on the cubes; they don't mix 
-    material.color.setRGB(1 + Math.cos(time), 1 + Math.cos(2 + time), 1 + Math.cos(4 + time));
+    material.color.setRGB(red / 255, green / 255, blue / 255);
+}
+
+function flipColors() {
+  console.log("flipped");
+  console.log( r1 / 255 + ", " + g1 / 255 + ", " + b1 / 255 );
+  console.log( r2 / 255 + ", " + g2 / 255 + ", " + b2 / 255 );
+  if (red == r1) {
+    red = r2;
+  }
+  else {
+    red = r1;
+  }
+  if (green == g1) {
+    green = g2;
+  }
+  else {
+    green = g1;
+  }
+  if (blue == b1) {
+    blue = b2;
+  }
+  else {
+    blue = b1;
+  }
 }
 
 // Set the position of the cubes
