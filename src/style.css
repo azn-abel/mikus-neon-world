@@ -306,7 +306,7 @@ canvas {
 }
 
 .selection{
-  background-color: #333;
+  background-color: black;
   color: #ddd;
   font-family: 'Lucida Sans', Verdana, sans-serif;
   font-weight: bold;

@@ -318,11 +318,11 @@ function resetChars() {
 
 function changeSong(songIndex) {
   var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+  if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
     console.log("1");
   } else {
-    x.style.display = "block";
+    x.style.display = "visible";
     console.log("2");
   }
   
@@ -355,6 +355,9 @@ function changeSong(songIndex) {
   
   overlay.className = "enabled";
 
+  var x = document.getElementById("myLinks");
+  x.style.visibility = "hidden";
+
   beginPlayback();
 }
 
@@ -383,6 +386,6 @@ window.onclick = function(event) {
   console.log(event.target);
   if (!event.target.matches('#myLinks') && !event.target.matches('.icon')) {
     var x = document.getElementById("myLinks");
-    x.style.display = "flex";
+    x.style.visibility = "hidden";
   }
 }
