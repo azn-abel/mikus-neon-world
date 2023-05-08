@@ -96,6 +96,7 @@ var player = new Player({
 });
 
 const overlay = document.querySelector("#overlay");
+const popupOverlay = document.querySelector("#popup-overlay");
 const bar = document.querySelector("#bar");
 const textContainer = document.querySelector("#text");
 const seekbar = document.querySelector("#seekbar");
@@ -113,7 +114,7 @@ function beginPlayback() {
       }
       if (!app.songUrl) {
         document.querySelector("#media").className = "disabled";
-  
+      popupOverlay.className = "disabled";
         // king妃jack躍 / 宮守文学 feat. 初音ミク
         // https://developer.textalive.jp/events/magicalmirai2023/#snippets
         player.createFromSongUrl(currentUrl);
@@ -395,8 +396,8 @@ window.onclick = function(event) {
 }
 
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
-  overlay.className = "enabled";
+  document.getElementById("myForm").style.display = "flex";
+  popupOverlay.className = "enabled";
   document.querySelector("#control > a#play").className = "disabled";
   document.querySelector("#control > a#stop").className = "disabled";
   document.querySelector("#settings > a#settei").className = "disabled";
@@ -404,7 +405,7 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
-  overlay.className = "disabled";
+  popupOverlay.className = "disabled";
   document.querySelector("#control > a#play").className = "";
   document.querySelector("#control > a#stop").className = "";
   document.querySelector("#settings > a#settei").className = "";

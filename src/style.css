@@ -46,6 +46,29 @@ canvas {
   display: inline-block;
 }
 
+/* menu Overlay */
+#popup-overlay {
+  user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  background: #0006;
+  z-index: 5;
+}
+#popup-overlay.disabled {
+  display: none;
+}
+#popup-overlay > p {
+  width: 100vw;
+}
+#popup-overlay > p > span {
+  display: inline-block;
+}
+
 /* フッターと音源 / Header and audio source */
 #header,
 #media {
@@ -348,19 +371,27 @@ canvas {
   z-index: 1;
 }
 
+.window-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:85vh;
+}
+
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
   position: absolute;
   background-color: white;
-  top: 50%;
-  left: 50%;
-  margin-top: -200px;
-  margin-left: -200px;
-  width: 400px;
-  height: 400px;
   border: 3px solid #f1f1f1;
+  width: 50%;
+  min-width: 400px;
+  height: 40%;
+  min-height: 300px;
   z-index: 9;
+  font-family: 'Lucida Sans', Verdana, sans-serif;
+  font-weight: bold;
 }
 
 /* Add styles to the form container */
@@ -369,21 +400,14 @@ canvas {
   background-color: white;
 }
 
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
-}
-
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-  background-color: red;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: rgb(99 208 226);
+  cursor: pointer;
 }
 
 /* Add some hover effects to buttons */

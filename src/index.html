@@ -49,13 +49,23 @@
             <option class="selection" value=5 onclick="changeSong(value)">Entrust via 39</option>
         </div>
 
-        <!-- The form -->
-        <div class="form-popup" id="myForm">
-          <form action="/action_page.php" class="form-container">
-            <h1>Login</h1>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-          </form>
+        <div class="window-container">
+          <!-- The form -->
+          <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <h1>Settings 設定</h1>
+              <button type="button" class="btn cancel" onclick="closeForm()">OK</button>
+              <container class="animation-container">
+                <!-- empty for now -->
+              </container>
+              <container class="color-container">
+                <!-- empty for now -->
+              </container>
+            </form>
+          </div>
         </div>
+        <!-- オーバーレイ / Overlay -->
+        <div id="popup-overlay"></div>
         
         <!-- オーバーレイ / Overlay -->
         <div id="overlay">
