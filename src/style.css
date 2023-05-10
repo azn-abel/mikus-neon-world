@@ -369,9 +369,9 @@ canvas {
   position: absolute;
   right: 0px;
   bottom: 20px;
-  max-width: 90vw;
+  max-width: 60vw;
   max-height: 90vh;
-  z-index: 0;
+  z-index: 3;
 }
 
 .window-container {
