@@ -320,10 +320,8 @@ function changeSong(songIndex) {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
     x.style.display = "none";
-    console.log("1");
   } else {
-    x.style.display = "block";
-    console.log("2");
+    x.style.display = "flex";
   }
   
   currentIdx = songIndex;
@@ -333,7 +331,6 @@ function changeSong(songIndex) {
   currentRepetitiveSegmentId = SongList[songIndex].repetitiveSegmentId;
   currentLyricId = SongList[songIndex].lyricId;
   currentLyricDiffId= SongList[songIndex].lyricDiffId
-  console.log(songIndex);
 
   if (player) {
     player.requestStop();
@@ -360,27 +357,16 @@ function changeSong(songIndex) {
 
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function burgerClick() {
-  console.log("ello");
   var x = document.getElementById("myLinks");
   if (x.style.visibility === "visible") {
     x.style.visibility = "hidden";
-    console.log("1");
   } else {
     x.style.visibility = "visible";
-    console.log("2");
   }
-  // if (x.style.display === "block") {
-  //     x.style.display = "none";
-  //     console.log("1");
-  // } else {
-  //     x.style.display = "block";
-  //     console.log("2");
-  // }
 }
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  console.log(event.target);
   if (!event.target.matches('#myLinks') && !event.target.matches('.icon')) {
     var x = document.getElementById("myLinks");
     x.style.display = "flex";
