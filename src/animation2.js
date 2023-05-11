@@ -38,13 +38,13 @@ const controls = new OrbitControls( camera, renderer.domElement );
 controls.minDistance = 5;
 controls.maxDistance = 50;
 controls.maxPolarAngle = Math.PI / 2 - 0.1;
-//controls.enableZoom = !isMobileDevice;
+// controls.enableZoom = !isMobileDevice;
 // controls.enablePan = !isMobileDevice;
-controls.enablePan = false;
-controls.enableRotate = false;
+// controls.enablePan = false;
+// controls.enableRotate = false;
 controls.addEventListener( 'change', render );
 
-//scene.add( new THREE.AmbientLight( 0xffffff ) );
+// scene.add( new THREE.AmbientLight( 0xffffff ) );
 
 const renderScene = new RenderPass( scene, camera );
 
@@ -113,13 +113,31 @@ cube6.position.x =  4.25;
 
 const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load( './images/city.png' );
+const cloud = textureLoader.load('./images/cloud.png');
 texture.encoding = THREE.sRGBEncoding;
+cloud.encoding = THREE.sRGBEncoding;
 
 const planeGeometry = new THREE.PlaneGeometry( 192, 108 );
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
 const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 plane.position.z = -50
 scene.add(plane);
+
+const cloudGeometry = new THREE.PlaneGeometry( 10.24, 5.76 );
+const cloudMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: cloud, transparent: true, opacity: 1 });
+const cloudMesh = new THREE.Mesh( cloudGeometry, cloudMaterial );
+const cloudMesh2 = new THREE.Mesh( cloudGeometry, cloudMaterial );
+cloudMesh.position.z = 0;
+cloudMesh.position.x = 20;
+cloudMesh2.position.z = -10;
+cloudMesh2.position.x = -10;
+scene.add(cloudMesh);
+scene.add(cloudMesh2);
+
+const clock = new THREE.Clock();
+var curr = 0;
+var prev = 0;
+var diff = 0;
 
 animate();
 
@@ -148,20 +166,39 @@ function render() {
 
 }
 
-function animate() {
-    
-    cube1.scale.y = (sum1 / 6000) * 2 / 3;
-    cube2.scale.y = (sum2 / 6000) * 2 / 3;
-    cube3.scale.y = (sum3 / 6000) * 2 / 3;
-    cube4.scale.y = (sum4 / 6000) * 2 / 3;
-    cube5.scale.y = (sum5 / 6000) * 2 / 3;
-    cube6.scale.y = (sum6 / 6000) * 2 / 3;
 
-    controls.update();
+function animate() {
+
+    curr = clock.getElapsedTime();
+    diff = curr - prev;
+    prev = curr;
+
+    cube1.scale.y = ((sum1 / 6000) * 2 / 3) ** 1.5;
+    cube2.scale.y = ((sum2 / 6000) * 2 / 3) ** 1.5;
+    cube3.scale.y = ((sum3 / 6000) * 2 / 3) ** 1.5;
+    cube4.scale.y = ((sum4 / 6000) * 2 / 3) ** 1.5;
+    cube5.scale.y = ((sum5 / 6000) * 2 / 3) ** 1.5;
+    cube6.scale.y = ((sum6 / 6000) * 2 / 3) ** 1.5;
+
+    if (cloudMesh.position.x < -20) {
+        cloudMesh.position.x = 20;
+    }
+
+    if (cloudMesh2.position.x < -30) {
+        cloudMesh2.position.x = 30;
+    }
+
+    if (!document.hidden) {
+        cloudMesh.position.x -= diff * 0.8;
+        cloudMesh2.position.x -= diff * 0.8;
+    } else {
+        console.log("hidden");
+    }
+    // controls.update();
 
     render();
     requestAnimationFrame(animate);
-    
+
 }
 
 function renderBloom() {

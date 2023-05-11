@@ -400,7 +400,8 @@ window.onclick = function(event) {
 }
 
 function openForm() {
-  document.getElementById("myForm").style.display = "flex";
+  const form = document.getElementById("myForm")
+  form.style.display = "flex";
   popupOverlay.className = "enabled";
   document.querySelector("#control > a#play").className = "disabled";
   document.querySelector("#control > a#stop").className = "disabled";

@@ -4,6 +4,8 @@
         <title>TextAlive App API | lyric sheet example</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&amp;display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/regular.min.css">
         <link rel="stylesheet" href="./style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,20 +54,32 @@
         <div class="window-container">
           <!-- The form -->
           <div class="form-popup" id="myForm">
-            <form action="/action_page.php" class="form-container">
-              <h1>Settings 設定</h1>
+            <!-- <form action="/action_page.php" class="form-container"> -->
+            <h1>Settings 設定</h1>
+            <div class="menu-items">
+              <div class="item">
+                <p>Animation</p>
+                <div class="animation container">
+                  <!-- empty for now -->
+                </div>
+              </div>
+              <div class="item">
+                <p>Beatbar Color</p>
+                <div class="beatbar container">
+                  <input type="color" id="bar-color1" value="#ff0000">
+                  <input type="color" id="bar-color2" value="#00ffff">
+                </div>
+              </div>
+              <div class="item">
+                <p>Lyrics Color</p>
+                <div class="text container">
+                  <input type="color" id="color-picker" value="#fddaff">
+                </div>
+              </div>
+            </div>
               <button type="button" class="btn cancel" onclick="closeForm()">OK</button>
-              <container class="animation-container">
-                <!-- empty for now -->
-              </container>
-              <container class="beatbar-container">
-                <input type="color" id="bar-color1" value="#ff0000">
-                <input type="color" id="bar-color2" value="#00ffff">
-              </container>
-              <container class="text-container">
-                <input type="color" id="color-picker" value="#fddaff">
-              </container>
-            </form>
+
+            <!-- </form> -->
           </div>
         </div>
         <!-- オーバーレイ / Overlay -->
