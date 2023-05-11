@@ -17,42 +17,49 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
     antialias: true,
-    alpha: true
+    // alpha: true
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.gammaOutput = false;
 camera.position.setZ(10);
+barGraph(); // Sets cube positions based on screen resolution
 
+// num = 0xff0000;
 const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial();
+material.color = new THREE.Color(0x41fcf6)
 
-const cube1 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+//cubes
+const cube1 = new THREE.Mesh(geometry, material);
 scene.add(cube1);
 
-const cube2 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube2 = new THREE.Mesh(geometry, material);
 scene.add(cube2);
 
-const cube3 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube3 = new THREE.Mesh(geometry, material);
 scene.add(cube3);
 
-const cube4 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube4 = new THREE.Mesh(geometry, material);
 scene.add(cube4);
 
-const cube5 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube5 = new THREE.Mesh(geometry, material);
 scene.add(cube5);
 
-const cube6 = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xff0000 }));
+const cube6 = new THREE.Mesh(geometry, material);
 scene.add(cube6);
 
-// Create wireframe edges
+// Create wireframe edges *unused*
 const edges = new THREE.EdgesGeometry(geometry);
 const lineMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
-// const wireframe = new THREE.LineSegments(edges, lineMaterial);
-//cube.add(new THREE.LineSegments(edges, lineMaterial));
-//pube.add(new THREE.LineSegments(edges, lineMaterial));
-//skewb.add(new THREE.LineSegments(edges, lineMaterial));
 
-// Set the position of the cube
+/*
+ooga
+how to make cube array
+agoo
+*/
+
 cube1.position.x = -4.25;
 cube2.position.x = -2.40;
 cube3.position.x = -0.75;
@@ -60,8 +67,20 @@ cube4.position.x =  0.75;
 cube5.position.x =  2.40;
 cube6.position.x =  4.25;
 
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(gridHelper);
+// Show grid
+const gridHelper = new THREE.GridHelper(200, 50);
+scene.add(gridHelper);
+
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load( './images/city.png' );
+texture.encoding = THREE.sRGBEncoding;
+
+const planeGeometry = new THREE.PlaneGeometry( 192, 108 );
+const planeMaterial = new THREE.MeshBasicMaterial({color: 0x4a4a4a, map: texture});
+const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+plane.position.z = -30
+scene.add(plane);
+
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.minDistance = 5;
@@ -102,27 +121,90 @@ renderer.toneMappingExposure = 3;
 
 const clock = new THREE.Clock();
 var x = 0;
+
+var red = r1;
+var green = g1;
+var blue = b1;
+
+var beat = b;
+
 const animate = () => {
+
+    if (beat !== b) {
+        if (b) {
+          flipColors();
+        }
+    }
+    beat = b;
 
     handleOrientationChange();
 
     x = clock.getElapsedTime();
 
-    cube1.scale.y = (sum1 / 6000) ** 2 / 2;
-    cube2.scale.y = (sum2 / 6000) ** 2 / 2;
-    cube3.scale.y = (sum3 / 6000) ** 2 / 2;
-    cube4.scale.y = (sum4 / 6000) ** 2 / 2;
-    cube5.scale.y = (sum5 / 6000) ** 2 / 2;
-    cube6.scale.y = (sum6 / 6000) ** 2 / 2;
+    cube1.scale.y = (sum1 / 6000) * 2 / 3;
+    cube2.scale.y = (sum2 / 6000) * 2 / 3;
+    cube3.scale.y = (sum3 / 6000) * 2 / 3;
+    cube4.scale.y = (sum4 / 6000) * 2 / 3;
+    cube5.scale.y = (sum5 / 6000) * 2 / 3;
+    cube6.scale.y = (sum6 / 6000) * 2 / 3;
 
     requestAnimationFrame(animate);
 
-
+    // Change cube color
+    updateColor(x);
+    // material.color.setRGB(35, 123, 60);
 
     // Render the scene with the camera
     controls.update();
     composer.render(scene, camera);
+    //renderer.render(scene, camera);
 };
+
+const updateColor = (time) => {
+    // Only shows cyan/magenta/yellow on the cubes; they don't mix 
+    material.color.setRGB(red / 255, green / 255, blue / 255);
+}
+
+function flipColors() {
+  console.log("flipped");
+  console.log( r1 / 255 + ", " + g1 / 255 + ", " + b1 / 255 );
+  console.log( r2 / 255 + ", " + g2 / 255 + ", " + b2 / 255 );
+  if (red == r1) {
+    red = r2;
+  }
+  else {
+    red = r1;
+  }
+  if (green == g1) {
+    green = g2;
+  }
+  else {
+    green = g1;
+  }
+  if (blue == b1) {
+    blue = b2;
+  }
+  else {
+    blue = b1;
+  }
+}
+
+// Set the position of the cubes
+function barGraph(){
+
+    var position = [];
+    var val = Math.floor(-1 * window.innerWidth/100);
+    for(var i = 0; i < window.innerWidth; i+= 100){
+        console.log(val);
+        position.push(val);
+        val += 1.5;
+    }
+
+    for(var i = 0; i < position.length; i ++){
+        // cube.push(position[i]);
+    }
+}
+
 
 // Start the animation loop
 animate();

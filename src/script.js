@@ -96,6 +96,7 @@ var player = new Player({
 });
 
 const overlay = document.querySelector("#overlay");
+const popupOverlay = document.querySelector("#popup-overlay");
 const bar = document.querySelector("#bar");
 const textContainer = document.querySelector("#text");
 const seekbar = document.querySelector("#seekbar");
@@ -103,6 +104,9 @@ const paintedSeekbar = seekbar.querySelector("div");
 const dropdownButton = document.querySelector("#dropbtn");
 const burgerMenu = document.querySelector("#burger-menu");
 let b, c;
+
+//Beatbar colors
+let r1, r2, g1, g2, b1, b2;
 
 function beginPlayback() {
   player.addListener({
@@ -113,7 +117,7 @@ function beginPlayback() {
       }
       if (!app.songUrl) {
         document.querySelector("#media").className = "disabled";
-  
+      popupOverlay.className = "disabled";
         // king妃jack躍 / 宮守文学 feat. 初音ミク
         // https://developer.textalive.jp/events/magicalmirai2023/#snippets
         player.createFromSongUrl(currentUrl);
@@ -154,6 +158,7 @@ function beginPlayback() {
       overlay.className = "disabled";
       document.querySelector("#control > a#play").className = "";
       document.querySelector("#control > a#stop").className = "";
+      document.querySelector("#settings > a#settei").className = "";
     },
   
     /* 再生位置の情報が更新されたら呼ばれる */
@@ -167,12 +172,12 @@ function beginPlayback() {
       let beat = player.findBeat(position);
       if (b !== beat) {
         if (beat) {
-          // requestAnimationFrame(() => {
-          //   bar.className = "active";
-          //   requestAnimationFrame(() => {
-          //     bar.className = "active beat";
-          //   });
-          // });
+          requestAnimationFrame(() => {
+            bar.className = "active";
+            requestAnimationFrame(() => {
+              bar.className = "active beat";
+            });
+          });
         }
         b = beat;
       }
@@ -215,6 +220,7 @@ function beginPlayback() {
   });
 }
 
+getBarColors();
 beginPlayback();
 
 /* 再生・一時停止ボタン */
@@ -318,10 +324,10 @@ function resetChars() {
 
 function changeSong(songIndex) {
   var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
+  if (x.style.visibility === "visible") {
+    x.style.visibility = "hidden";
   } else {
-    x.style.display = "flex";
+    x.style.display = "visible";
   }
   
   currentIdx = songIndex;
@@ -351,6 +357,12 @@ function changeSong(songIndex) {
   });
   
   overlay.className = "enabled";
+  document.querySelector("#control > a#play").className = "disabled";
+  document.querySelector("#control > a#stop").className = "disabled";
+  document.querySelector("#settings > a#settei").className = "disabled";
+
+  var x = document.getElementById("myLinks");
+  x.style.visibility = "hidden";
 
   beginPlayback();
 }
@@ -369,6 +381,65 @@ function burgerClick() {
 window.onclick = function(event) {
   if (!event.target.matches('#myLinks') && !event.target.matches('.icon')) {
     var x = document.getElementById("myLinks");
-    x.style.display = "flex";
+    x.style.visibility = "hidden";
   }
+}
+
+function openForm() {
+  const form = document.getElementById("myForm")
+  form.style.display = "flex";
+  popupOverlay.className = "enabled";
+  document.querySelector("#control > a#play").className = "disabled";
+  document.querySelector("#control > a#stop").className = "disabled";
+  document.querySelector("#settings > a#settei").className = "disabled";
+}
+
+function getBarColors() {
+  var color1 = parseInt(document.getElementById("bar-color1").value.substring(1, 7), 16);
+  var color2 = parseInt(document.getElementById("bar-color2").value.substring(1, 7), 16);
+
+  r1 = Math.floor(color1 / 0x10000);
+  r2 = Math.floor(color2 / 0x10000);
+  g1 = Math.floor(color1 / 0x100);
+  g1 = g1 % 0x100;
+  g2 = Math.floor(color2 / 0x100);
+  g2 = g2 % 0x100;
+  b1 = color1 % 0x100;
+  b2 = color2 % 0x100;
+
+  console.log( r1 + ", " + g1 + ", " + b1 );
+  console.log( r2 + ", " + g2 + ", " + b2 );
+}
+
+function closeForm() {
+  // Handle changes in font color
+  var mainColor = parseInt(document.getElementById("color-picker").value.substring(1, 7), 16);
+  shadowColor = mainColor - 0x1fffff;
+  nounColor = mainColor + 0x1fffff;
+
+  if (shadowColor < 0) {
+    shadowColor = 0;
+  }
+  if (nounColor > 0xffffff) {
+    nounColor = 0xffffff;
+  }
+  console.log(mainColor);
+  console.log(shadowColor);
+  console.log(nounColor);
+  console.log("#" + mainColor.toString(16) + ", #" + shadowColor.toString(16) + ", #" + nounColor.toString(16));
+
+  document.getElementById("lyrics").style.color = "#" + mainColor.toString(16); 
+  document.getElementById("lyrics").style.textShadow = "2px 2px 3px #" + shadowColor.toString(16);
+  document.querySelectorAll(".noun").color = "#" + nounColor.toString(16); 
+
+  // Handle changes in beatbar color
+
+  getBarColors();
+
+  // Close form
+  document.getElementById("myForm").style.display = "none";
+  popupOverlay.className = "disabled";
+  document.querySelector("#control > a#play").className = "";
+  document.querySelector("#control > a#stop").className = "";
+  document.querySelector("#settings > a#settei").className = "";
 }

@@ -4,6 +4,8 @@
         <title>TextAlive App API | lyric sheet example</title>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&amp;display=swap">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/regular.min.css">
         <link rel="stylesheet" href="./style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +24,10 @@
           <div id="control" class="far">
             <a href="#" id="play" class="disabled">&#xf144;</a>
             <a href="#" id="stop" class="disabled">&#xf28d;</a>
+          </div>
+          
+          <div id="settings" class="far">
+            <a href="#" id="settei" class="disabled" onclick="openForm()">&#xf185;</a>
           </div>
           <!-- アーティストと楽曲の情報 / Artist and song info -->
           <div id="meta">
@@ -45,6 +51,40 @@
             <option class="selection" value=5 onclick="changeSong(value)">Entrust via 39</option>
         </div>
 
+        <div class="window-container">
+          <!-- The form -->
+          <div class="form-popup" id="myForm">
+            <!-- <form action="/action_page.php" class="form-container"> -->
+            <h1>Settings 設定</h1>
+            <div class="menu-items">
+              <div class="item">
+                <p>Animation</p>
+                <div class="animation container">
+                  <!-- empty for now -->
+                </div>
+              </div>
+              <div class="item">
+                <p>Beatbar Color</p>
+                <div class="beatbar container">
+                  <input type="color" id="bar-color1" value="#ff0000">
+                  <input type="color" id="bar-color2" value="#00ffff">
+                </div>
+              </div>
+              <div class="item">
+                <p>Lyrics Color</p>
+                <div class="text container">
+                  <input type="color" id="color-picker" value="#fddaff">
+                </div>
+              </div>
+            </div>
+              <button type="button" class="btn cancel" onclick="closeForm()">OK</button>
+
+            <!-- </form> -->
+          </div>
+        </div>
+        <!-- オーバーレイ / Overlay -->
+        <div id="popup-overlay"></div>
+        
         <!-- オーバーレイ / Overlay -->
         <div id="overlay">
           <p><span class="far">&#xf254;</span><br>now loading...<br>ロード中...</p>
@@ -65,11 +105,41 @@
         <div id="seekbar">
         <div></div>
         </div>
+
+        <img class="miku-image" id="miku-image" src="./images/visual_2023.png" alt="Hatsune Miku">
         
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="https://unpkg.com/textalive-app-api/dist/index.js"></script>
         <script src="./script.js"></script>
-        <script type="module" src="./animation.js"></script>
+        <script type="x-shader/x-vertex" id="vertexshader">
+
+          varying vec2 vUv;
+    
+          void main() {
+    
+            vUv = uv;
+    
+            gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+    
+          }
+    
+        </script>
+    
+        <script type="x-shader/x-fragment" id="fragmentshader">
+    
+          uniform sampler2D baseTexture;
+          uniform sampler2D bloomTexture;
+    
+          varying vec2 vUv;
+    
+          void main() {
+    
+            gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
+    
+          }
+    
+        </script>
+        <script type="module" src="./animation2.js"></script>
         <script src="./audio.js"></script>
 
     </body>
