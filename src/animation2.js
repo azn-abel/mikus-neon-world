@@ -135,9 +135,9 @@ scene.add(cloudMesh);
 scene.add(cloudMesh2);
 
 const clock = new THREE.Clock();
-var curr = 0;
-var prev = 0;
-var diff = 0;
+let curr = 0;
+let prev = 0;
+let diff = 0;
 
 animate();
 
