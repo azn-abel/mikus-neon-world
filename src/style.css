@@ -29,17 +29,24 @@ canvas {
   bottom: 0;
   display: flex;
   align-items: center;
-  background: #0006;
+  text-align: center;
+  background: #000;
   color: #fffc;
   z-index: 5;
+  font-family: 'Wix MadeFor Text', 'Kosugi Maru', Verdana, sans-serif;
 }
 #overlay.disabled {
-  display: none;
+  animation: fade-out 2s ease-in-out forwards;
+}
+@keyframes fade-out {
+  0%   {opacity: 1;}
+  100% {opacity: 0; display: none; visibility: hidden}
 }
 #overlay > p {
   width: 100vw;
   font-size: 40px;
   text-align: center;
+  align-items: center;
 }
 #overlay > p > span {
   display: inline-block;
@@ -282,6 +289,7 @@ canvas {
   right: 0;
   height: 10px;
   background: rgba(255 255 255 / 40%);
+  z-index: 2;
 }
 
 #seekbar > div {
@@ -314,6 +322,16 @@ canvas {
   height: 120px;
   top: 48px;
   right: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: inherit;
 }
 
 /* Style navigation menu links */
@@ -361,11 +379,15 @@ canvas {
 }
 
 .miku-image {
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 20px;
   max-width: 60vw;
   max-height: 90vh;
+  z-index: 1;
+}
+
+#media {
   z-index: 3;
 }
 
@@ -379,7 +401,7 @@ canvas {
 
 /* The popup form - hidden by default */
 .form-popup {
-  margin: 0;
+  margin: auto;
   padding: 20px;
   border-radius: 5px;
   border: 2px solid aqua;
@@ -413,11 +435,16 @@ h1 {
 
 .menu-items {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  /* flex-direction: row; */
   padding: 0 10px 10px;
 }
 
 .item {
+  text-align: center;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   padding-left: 10px;
@@ -430,6 +457,7 @@ h1 {
   align-items: center;
   justify-content: center;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 /* Add a red background color to the cancel button */

@@ -43,12 +43,12 @@
 
         <!-- Navigation links (hidden by default) -->
         <div id="myLinks">
-            <option class="selection" value=0 onclick="changeSong(value)">king妃jack躍</option>
-            <option class="selection" value=1 onclick="changeSong(value)">生きること</option>
-            <option class="selection" value=2 onclick="changeSong(value)">唱明者</option>
-            <option class="selection" value=3 onclick="changeSong(value)">ネオンライトの海を往く</option>
-            <option class="selection" value=4 onclick="changeSong(value)">ミュウテイション</option>
-            <option class="selection" value=5 onclick="changeSong(value)">Entrust via 39</option>
+            <button class="selection" value=0 onclick="changeSong(value)">king妃jack躍</button>
+            <button class="selection" value=1 onclick="changeSong(value)">生きること</button>
+            <button class="selection" value=2 onclick="changeSong(value)">唱明者</button>
+            <button class="selection" value=3 onclick="changeSong(value)">ネオンライトの海を往く</button>
+            <button class="selection" value=4 onclick="changeSong(value)">ミュウテイション</button>
+            <button class="selection" value=5 onclick="changeSong(value)">Entrust via 39</button>
         </div>
 
         <div class="window-container">
@@ -57,6 +57,12 @@
             <!-- <form action="/action_page.php" class="form-container"> -->
             <h1>Settings 設定</h1>
             <div class="menu-items">
+              <div class="item">
+                <p>Expression</p>
+                <div class="expression container">
+                  <!-- empty for now -->
+                </div>
+              </div>
               <div class="item">
                 <p>Animation</p>
                 <div class="animation container">
@@ -87,7 +93,7 @@
         
         <!-- オーバーレイ / Overlay -->
         <div id="overlay">
-          <p><span class="far">&#xf254;</span><br>now loading...<br>ロード中...</p>
+          <p>Loading Player...</p>
         </div>
 
         <!-- 音源 / Audio souce -->

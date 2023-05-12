@@ -117,7 +117,7 @@ function beginPlayback() {
       }
       if (!app.songUrl) {
         document.querySelector("#media").className = "disabled";
-      popupOverlay.className = "disabled";
+        popupOverlay.className = "disabled";
         // king妃jack躍 / 宮守文学 feat. 初音ミク
         // https://developer.textalive.jp/events/magicalmirai2023/#snippets
         player.createFromSongUrl(currentUrl);
