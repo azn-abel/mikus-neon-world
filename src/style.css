@@ -38,6 +38,9 @@ canvas {
 #overlay.disabled {
   animation: fade-out 2s ease-in-out forwards;
 }
+#overlay.ready {
+  cursor: pointer;
+}
 @keyframes fade-out {
   0%   {opacity: 1;}
   100% {opacity: 0; display: none; visibility: hidden}
@@ -125,6 +128,7 @@ canvas {
 }
 #settings a:hover {
   color: rgb(233, 47, 47);
+  cursor: pointer;
 }
 
 #settings a{
@@ -353,6 +357,7 @@ button {
   top: 0;
   z-index: 3;
   color: #333;
+  cursor: pointer;
 }
 
 /* Add a grey background color on mouse-over */
