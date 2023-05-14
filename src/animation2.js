@@ -139,6 +139,15 @@ let curr = 0;
 let prev = 0;
 let diff = 0;
 
+var red = r1;
+var green = g1;
+var blue = b1;
+
+const updateColor = (time) => {
+    // Only shows cyan/magenta/yellow on the cubes; they don't mix 
+    material.color.setRGB(red / 255, green / 255, blue / 255);
+}
+
 animate();
 
 window.onresize = function () {
@@ -166,8 +175,16 @@ function render() {
 
 }
 
+var beat = b;
 
 function animate() {
+
+    if (beat !== b) {
+        if (b) {
+          flipColors();
+        }
+    }
+    beat = b;
 
     curr = clock.getElapsedTime();
     diff = curr - prev;
@@ -195,10 +212,36 @@ function animate() {
         console.log("hidden");
     }
     // controls.update();
+    // Change cube color
+    updateColor(curr);
 
     render();
     requestAnimationFrame(animate);
 
+}
+
+function flipColors() {
+  console.log("flipped");
+  console.log( r1 / 255 + ", " + g1 / 255 + ", " + b1 / 255 );
+  console.log( r2 / 255 + ", " + g2 / 255 + ", " + b2 / 255 );
+  if (red == r1) {
+    red = r2;
+  }
+  else {
+    red = r1;
+  }
+  if (green == g1) {
+    green = g2;
+  }
+  else {
+    green = g1;
+  }
+  if (blue == b1) {
+    blue = b2;
+  }
+  else {
+    blue = b1;
+  }
 }
 
 function renderBloom() {
