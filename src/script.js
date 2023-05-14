@@ -409,10 +409,10 @@ function getBarColors() {
 
   r1 = Math.floor(color1 / 0x10000);
   r2 = Math.floor(color2 / 0x10000);
-  g1 = Math.floor(color1 / 0x100);
-  g1 = g1 % 0x100;
-  g2 = Math.floor(color2 / 0x100);
-  g2 = g2 % 0x100;
+  g1 = color1 % 0x10000;
+  g1 = Math.floor(g1 / 0x100);
+  g2 = color2 % 0x10000;
+  g2 = Math.floor(g2 / 0x100);
   b1 = color1 % 0x100;
   b2 = color2 % 0x100;
 
@@ -423,8 +423,8 @@ function getBarColors() {
 function closeForm() {
   // Handle changes in font color
   var mainColor = parseInt(document.getElementById("color-picker").value.substring(1, 7), 16);
-  shadowColor = mainColor - 0x1fffff;
-  nounColor = mainColor + 0x1fffff;
+  shadowColor = mainColor - 0x555555;
+  nounColor = mainColor + 0x555555;
 
   if (shadowColor < 0) {
     shadowColor = 0;
