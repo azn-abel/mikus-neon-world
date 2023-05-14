@@ -58,16 +58,29 @@
             <h1>Settings 設定</h1>
             <div class="menu-items">
               <div class="item">
-                <p>Expression</p>
-                <div class="expression container">
-                  <!-- empty for now -->
-                </div>
+                <p for="expression">Expression</p>
+                <select name="expression container" id="expression">
+                  <option value="smile">Smile</option>
+                  <option value="frown">Frown</option>
+                  <option value="angry">Angry</option>
+                  <option value="shy">Shy</option>
+                </select>
               </div>
               <div class="item">
-                <p>Animation</p>
-                <div class="animation container">
-                  <!-- empty for now -->
-                </div>
+                <p for="visual">Visual Effects</p>
+                <select name="visual container" id="visual">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+              <div class="item">
+                <p for="animation">Animation</p>
+                <select name="animation container" id="animation">
+                  <option value="mouth">Mouth</option>
+                  <option value="speakers">Speakers</option>
+                  <option value="both">Both</option>
+                </select>
               </div>
               <div class="item">
                 <p>Beatbar Color</p>
