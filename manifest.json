@@ -1,29 +1,16 @@
 {
-    "name": "My Extension",
+    "name": "Queen of the City",
     "version": "1.0.0",
-    "description": "",
+    "description": "Music Visualizer for Hatsune Miku Magical Mirai 2023",
     "manifest_version": 2,
     "icons": {
       "16": "icon16.png",
       "48": "icon48.png",
-      "128": "icon128.png"
+      "128": ".png"
     },
     "permissions": [
       "activeTab",
       "storage"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["https://www.example.com/*"],
-        "js": ["content.js"]
-      }
-    ],
-    "background": {
-      "scripts": ["background.js"]
-    },
-    "browser_action": {
-      "default_popup": "popup.html",
-      "default_icon": "icon.png"
-    }
+    ]
   }
   
