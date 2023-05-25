@@ -41,6 +41,9 @@
           </a>
         </div>
 
+        <!-- Language options button -->
+        <button class="language-button" id="language-button" onclick="switchLanguage()">日本語</button>
+
         <!-- Navigation links (hidden by default) -->
         <div id="myLinks">
             <button class="selection" value=0 onclick="changeSong(value)">king妃jack躍</button>
@@ -55,42 +58,42 @@
           <!-- The form -->
           <div class="form-popup" id="myForm">
             <!-- <form action="/action_page.php" class="form-container"> -->
-            <h1>Settings 設定</h1>
+            <h1 id="settings-header">Settings</h1>
             <div class="menu-items">
               <div class="item">
-                <p for="expression">Expression / 表情</p>
+                <p id="expression-header" for="expression">Expression</p>
                 <select name="expression container" id="expression">
-                  <option value="smile">Smile・笑顔</option>
-                  <option value="frown">Frown・しかめ面</option>
-                  <option value="angry">Angry・怒ってる</option>
-                  <option value="shy">Shy・照れてる</option>
+                  <option id="smile" value="smile">Smile</option>
+                  <option id="frown" value="frown">Frown</option>
+                  <option id="angry" value="angry">Angry</option>
+                  <option id="shy" value="shy">Shy</option>
                 </select>
               </div>
               <div class="item">
-                <p for="visual">Visual Effects / ビジュアル効果</p>
+                <p id="visual-header" for="visual">Visual Effects</p>
                 <select name="visual container" id="visual">
-                  <option value="low">Low・低</option>
-                  <option value="medium">Medium・中</option>
-                  <option value="high">High・高</option>
+                  <option id="low" value="low">Low</option>
+                  <option id="medium" value="medium">Medium</option>
+                  <option id="high" value="high">High</option>
                 </select>
               </div>
               <div class="item">
-                <p for="animation">Animation / アニメーション</p>
+                <p id="animation-header" for="animation">Animation</p>
                 <select name="animation container" id="animation">
-                  <option value="mouth">Mouth・口</option>
-                  <option value="speakers">Speakers・スピーカー</option>
-                  <option value="both">Both・両方</option>
+                  <option id="mouth" value="mouth">Mouth</option>
+                  <option id="speakers" value="speakers">Speakers</option>
+                  <option id="both" value="both">Both</option>
                 </select>
               </div>
               <div class="item">
-                <p>Beatbar Color / ビートバーの色</p>
+                <p id="beatbar-header">Beatbar Color</p>
                 <div class="beatbar container">
                   <input type="color" id="bar-color1" value="#ff0000">
                   <input type="color" id="bar-color2" value="#00ffff">
                 </div>
               </div>
               <div class="item">
-                <p>Lyrics Color / 歌詞の色</p>
+                <p id="lyrics-header">Lyrics Color</p>
                 <div class="text container">
                   <input type="color" id="color-picker" value="#fddaff">
                 </div>
@@ -106,7 +109,7 @@
         
         <!-- オーバーレイ / Overlay -->
         <div id="overlay">
-          <p id="overlay-text">Loading Player...<br>読み込み中</p>
+          <p id="overlay-text">Loading Player...</p>
         </div>
 
         <!-- 音源 / Audio souce -->
