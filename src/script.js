@@ -478,6 +478,12 @@ function switchLanguage() {
     document.getElementById("beatbar-header").innerHTML = "ビートバーの色";
     document.getElementById("lyrics-header").innerHTML = "歌詞の色";
     document.getElementById("overlay-text").innerHTML = "読み込み中...";
+
+    document.getElementById("kingJack").innerHTML = "king妃jack躍";
+    document.getElementById("toLive").innerHTML = "生きること";
+    document.getElementById("shoumeisha").innerHTML = "唱明者";
+    document.getElementById("neonLights").innerHTML = "ネオンライトの海を往く";
+    document.getElementById("mutation").innerHTML = "ミュウテイション";
   }
   else {
     currentLanguage = "en";
@@ -499,5 +505,11 @@ function switchLanguage() {
     document.getElementById("beatbar-header").innerHTML = "Beatbar Color";
     document.getElementById("lyrics-header").innerHTML = "Lyrics Color";
     document.getElementById("overlay-text").innerHTML = "Loading Player...";
+
+    document.getElementById("kingJack").innerHTML = "king ki jack yaku";
+    document.getElementById("toLive").innerHTML = "To live";
+    document.getElementById("shoumeisha").innerHTML = "shoumeisha";
+    document.getElementById("neonLights").innerHTML = "Going through a sea of Neon lights";
+    document.getElementById("mutation").innerHTML = "Mutation";
   }
 }
