@@ -38,10 +38,10 @@ const controls = new OrbitControls( camera, renderer.domElement );
 controls.minDistance = 5;
 controls.maxDistance = 50;
 controls.maxPolarAngle = Math.PI / 2 - 0.1;
-// controls.enableZoom = !isMobileDevice;
+controls.enableZoom = false
 // controls.enablePan = !isMobileDevice;
-// controls.enablePan = false;
-// controls.enableRotate = false;
+controls.enablePan = false;
+controls.enableRotate = false;
 controls.addEventListener( 'change', render );
 
 // scene.add( new THREE.AmbientLight( 0xffffff ) );
