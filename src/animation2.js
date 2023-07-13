@@ -120,7 +120,7 @@ cloud.encoding = THREE.sRGBEncoding;
 const planeGeometry = new THREE.PlaneGeometry( 192, 108 );
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
 const plane = new THREE.Mesh( planeGeometry, planeMaterial );
-plane.position.z = -50
+plane.position.z = -60
 scene.add(plane);
 
 const cloudGeometry = new THREE.PlaneGeometry( 10.24, 5.76 );
