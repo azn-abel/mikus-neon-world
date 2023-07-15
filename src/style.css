@@ -301,7 +301,7 @@ canvas {
 }
 
 /* ビートバー / Beat bar */
-#bar {
+/* #bar {
   opacity: 0;
   height: 3px;
   background: rgb(255 222 193);
@@ -311,7 +311,7 @@ canvas {
 }
 #bar.beat {
   animation: showBeatBar 0.5s;
-}
+} */
 
 /* 歌詞 / Lyrics */
 #lyrics {
@@ -326,7 +326,8 @@ canvas {
   cursor: pointer;
   position: absolute;
   top: 10%;
-
+  
+  opacity: 1;
   /* 歌詞をちょっと回転させる / Rotate text */
   transform: rotateX(0deg) rotateY(0deg);
 

@@ -109,6 +109,8 @@ const dropdownButton = document.querySelector("#dropbtn");
 const burgerMenu = document.querySelector("#burger-menu");
 let b, c;
 
+let restCount = 0;
+let resting = false;
 //Beatbar colors
 let r1, r2, g1, g2, b1, b2;
 
@@ -198,6 +200,7 @@ function beginPlayback() {
               bar.className = "active beat";
             });
           });
+          restCount += 1;
         }
         b = beat;
       }
@@ -220,6 +223,18 @@ function beginPlayback() {
           newChar(current);
           c = current;
         }
+
+        console.log("!!!" + restCount);
+        if (!current.next || current.next.startTime - current.endTime > 1500) {
+          resting = true;
+          
+          if (restCount >= 4) {
+            let lyricDisplay = document.getElementById(lyrics);
+            while (textContainer.firstChild)
+            textContainer.removeChild(textContainer.firstChild);
+          }
+        }
+
         current = current.next;
       }
     },
@@ -288,7 +303,7 @@ var prevClasses = []
 function newChar(current) {
   // 品詞 (part-of-speech)
   // https://developer.textalive.jp/packages/textalive-app-api/interfaces/iword.html#pos
-  
+  restCount = 0;
   if (prevClasses.includes("lastChar")) {
     resetChars();
   }
