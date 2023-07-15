@@ -30,19 +30,22 @@ document.body.appendChild( renderer.domElement );
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 200 );
+
+const camera = new THREE.OrthographicCamera( window.innerWidth / - 15, window.innerWidth / 15, window.innerHeight / 15, window.innerHeight / - 15, -5, 1000);
+// const camera = new THREE.OrthographicCamera( -10, 10, 10, -10, -5, 1000);
 camera.position.z = 10;
+camera.position.y = 1;
 
 
-const controls = new OrbitControls( camera, renderer.domElement );
-controls.minDistance = 5;
-controls.maxDistance = 50;
-controls.maxPolarAngle = Math.PI / 2 - 0.1;
-controls.enableZoom = false
-// controls.enablePan = !isMobileDevice;
-controls.enablePan = false;
-controls.enableRotate = false;
-controls.addEventListener( 'change', render );
+// const controls = new OrbitControls( camera, renderer.domElement );
+// controls.minDistance = 5;
+// controls.maxDistance = 50;
+// controls.maxPolarAngle = Math.PI / 2 - 0.1;
+// controls.enableZoom = false
+// // controls.enablePan = !isMobileDevice;
+// controls.enablePan = false;
+// controls.enableRotate = false;
+// controls.addEventListener( 'change', render );
 
 // scene.add( new THREE.AmbientLight( 0xffffff ) );
 
@@ -104,12 +107,27 @@ const cube6 = new THREE.Mesh(boxGeometry, material);
 scene.add(cube6);
 cube6.layers.enable( BLOOM_SCENE );
 
-cube1.position.x = -4.25;
-cube2.position.x = -2.40;
-cube3.position.x = -0.75;
-cube4.position.x =  0.75;
-cube5.position.x =  2.40;
-cube6.position.x =  4.25;
+cube1.position.y = 10;
+cube2.position.y = 10;
+cube3.position.y = 10;
+cube4.position.y = 10;
+cube5.position.y = 10;
+cube6.position.y = 10;
+
+cube1.position.x = -60;
+cube2.position.x = -45;
+cube3.position.x = -30;
+cube4.position.x = -15;
+cube5.position.x =  0;
+cube6.position.x =  15;
+
+cube1.scale.x = 10;
+cube2.scale.x = 10;
+cube3.scale.x = 10;
+cube4.scale.x = 10;
+cube5.scale.x = 10;
+cube6.scale.x = 10;
+
 
 const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load( './images/city.png' );
@@ -117,7 +135,7 @@ const cloud = textureLoader.load('./images/cloud.png');
 texture.encoding = THREE.sRGBEncoding;
 cloud.encoding = THREE.sRGBEncoding;
 
-const planeGeometry = new THREE.PlaneGeometry( 192, 108 );
+const planeGeometry = new THREE.PlaneGeometry( 259.2, 145.8 );
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
 const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 plane.position.z = -60
@@ -152,8 +170,16 @@ animate();
 
 window.onresize = function () {
 
+    // Get the new size of the window
     const width = window.innerWidth;
     const height = window.innerHeight;
+
+
+    // Update the camera's parameters with the new aspect ratio
+    camera.left = width / - 15;
+    camera.right = width / 15;
+    camera.top = height / 15;
+    camera.bottom = height / -15;
 
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
@@ -177,11 +203,17 @@ function render() {
 
 var beat = b;
 
+let speaker = document.getElementById("speaker-image")
+
 function animate() {
 
     if (beat !== b) {
         if (b) {
           flipColors();
+          speaker.classList.add("speaker-beat");
+          setTimeout(() => {
+              speaker.classList.remove("speaker-beat")
+          }, 150)
         }
     }
     beat = b;
@@ -190,12 +222,12 @@ function animate() {
     diff = curr - prev;
     prev = curr;
 
-    cube1.scale.y = ((sum1 / 6000) * 2 / 3) ** 1.5;
-    cube2.scale.y = ((sum2 / 6000) * 2 / 3) ** 1.5;
-    cube3.scale.y = ((sum3 / 6000) * 2 / 3) ** 1.5;
-    cube4.scale.y = ((sum4 / 6000) * 2 / 3) ** 1.5;
-    cube5.scale.y = ((sum5 / 6000) * 2 / 3) ** 1.5;
-    cube6.scale.y = ((sum6 / 6000) * 2 / 3) ** 1.5;
+    cube1.scale.y = ((sum1 / 1200) * 2 / 3) ** 1.5;
+    cube2.scale.y = ((sum2 / 1200) * 2 / 3) ** 1.5;
+    cube3.scale.y = ((sum3 / 1200) * 2 / 3) ** 1.5;
+    cube4.scale.y = ((sum4 / 1200) * 2 / 3) ** 1.5;
+    cube5.scale.y = ((sum5 / 1200) * 2 / 3) ** 1.5;
+    cube6.scale.y = ((sum6 / 1200) * 2 / 3) ** 1.5;
 
     if (cloudMesh.position.x < -20) {
         cloudMesh.position.x = 20;
@@ -273,3 +305,26 @@ function restoreMaterial( obj ) {
     }
 
 }
+
+function updateCameraOnResize() {
+    // Get the new size of the window
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    // Calculate the new aspect ratio based on the new size
+    const aspectRatio = width / height;
+
+    // Update the camera's parameters with the new aspect ratio
+    camera.left = width / - 15;
+    camera.right = width / 15;
+    camera.top = height / 15;
+    camera.bottom = height / -15;
+
+    // Update the camera's projection matrix
+    camera.updateProjectionMatrix();
+
+    // Update the renderer's size to match the new window size
+    renderer.setSize(width, height);
+}
+
+window.addEventListener('resize', updateCameraOnResize)

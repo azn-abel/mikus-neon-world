@@ -384,12 +384,43 @@ button {
 }
 
 .miku-image {
+  pointer-events: none;
   position: fixed;
-  right: 0;
+  left: 60%;
   bottom: 20px;
-  max-width: 60vw;
-  max-height: 90vh;
+  height: 80vh;
   z-index: 1;
+}
+
+.speaker-image {
+  pointer-events: none;
+  position: fixed;
+  bottom: 20px;
+  left: 60%;
+  height: 20vh;
+  z-index: 1;
+}
+
+.speaker-beat {
+  -webkit-animation:zoom-in-out 0.15s ease-in-out infinite normal;
+  -moz-animation:zoom-in-out 0.15s ease-in-out infinite normal;
+  -ms-animation:zoom-in-out 0.15s ease-in-out infinite normal;
+  animation:zoom-in-out 0.15s ease-in-out infinite normal;
+}
+
+/*@-webkit-keyframes zoom-in-out {*/
+/*  0%{ -webkit-transform: scale(1); transform: scale(1); }*/
+/*  25%{ -webkit-transform: scale(1.2); transform: scale(1.2); }*/
+/*  50%{ -webkit-transform: scale(1); transform: scale(1); }*/
+/*  100%{ -webkit-transform: scale(1); transform: scale(1); }*/
+
+/*}*/
+
+@keyframes zoom-in-out {
+  0%{ -ms-transform: scale(1); transform: scale(1); }
+  25%{ -ms-transform: scale(1.05); transform: scale(1.05); }
+  100%{ -ms-transform: scale(1); transform: scale(1); }
+  /*100%{ -ms-transform: scale(1); transform: scale(1); }*/
 }
 
 #media {

@@ -142,8 +142,8 @@ function beginPlayback() {
     onAppMediaChange() {
       // 画面表示をリセット
       overlay.className = "";
-      overlayText = document.getElementById('overlay-text');
-      if (currentLanguage == "en") {
+      let overlayText = document.getElementById('overlay-text');
+      if (currentLanguage === "en") {
         overlayText.textContent = 'Loading Player...';
       }
       else {
@@ -167,8 +167,8 @@ function beginPlayback() {
     /* 再生コントロールができるようになったら呼ばれる */
     onTimerReady() {
       overlay.className = "ready";
-      overlayText = document.getElementById('overlay-text');
-      if (currentLanguage == "en") {
+      let overlayText = document.getElementById('overlay-text');
+      if (currentLanguage === "en") {
         overlayText.textContent = 'Click to enter.';
       }
       else {
