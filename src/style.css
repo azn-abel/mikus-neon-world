@@ -79,6 +79,98 @@ canvas {
   display: inline-block;
 }
 
+#overlay-text {
+  display: inline-block;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* フッターと音源 / Header and audio source */
 #header,
 #media {
@@ -209,7 +301,7 @@ canvas {
 }
 
 /* ビートバー / Beat bar */
-#bar {
+/* #bar {
   opacity: 0;
   height: 3px;
   background: rgb(255 222 193);
@@ -219,7 +311,7 @@ canvas {
 }
 #bar.beat {
   animation: showBeatBar 0.5s;
-}
+} */
 
 /* 歌詞 / Lyrics */
 #lyrics {
@@ -234,7 +326,8 @@ canvas {
   cursor: pointer;
   position: absolute;
   top: 10%;
-
+  
+  opacity: 1;
   /* 歌詞をちょっと回転させる / Rotate text */
   transform: rotateX(0deg) rotateY(0deg);
 
@@ -454,17 +547,17 @@ button {
 }
 
 .language-button {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
   padding: 20px;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: rgba(255, 255, 255, 0.9);
+  /* background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.9); */
+  padding: 14px 20px;
+  background-color: rgb(99, 208, 226, 0.7);
+  border-radius: 10px;
 }
 
 .language-button:hover {
-  background-color: black;
+  background-color: rgba(99, 207, 226, 0.4);
 }
 
 h1 {
@@ -521,6 +614,10 @@ h1 {
   font-weight: bold;
   color: #333;
   border: none;
+}
+
+.slidecontainer {
+  width: 100%;
 }
 
 /* Add some hover effects to buttons */
