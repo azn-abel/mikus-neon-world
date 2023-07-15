@@ -144,10 +144,10 @@ function beginPlayback() {
       overlay.className = "";
       overlayText = document.getElementById('overlay-text');
       if (currentLanguage == "en") {
-        overlayText.textContent = 'Loading Player...';
+        overlayText.textContent = 'Loading Player';
       }
       else {
-        overlayText.textContent = '読み込み中...';
+        overlayText.textContent = '読み込み中';
       }
       bar.className = "";
       resetChars();
@@ -167,9 +167,11 @@ function beginPlayback() {
     /* 再生コントロールができるようになったら呼ばれる */
     onTimerReady() {
       overlay.className = "ready";
+      loadingCircle = document.getElementById('loader');
+      loadingCircle.style.visibility = "hidden";
       overlayText = document.getElementById('overlay-text');
       if (currentLanguage == "en") {
-        overlayText.textContent = 'Click to enter.';
+        overlayText.textContent = 'Click to enter';
       }
       else {
         overlayText.textContent = 'クリックして進む';
@@ -375,12 +377,14 @@ function changeSong(songIndex) {
   });
   
   overlay.className = "enabled";
+  loadingCircle = document.getElementById('loader');
+  loadingCircle.style.visibility = "visible";
   overlayText = document.getElementById('overlay-text');
   if (currentLanguage == "en") {
-    overlayText.textContent = 'Loading Player...';
+    overlayText.textContent = 'Loading Player';
   }
   else {
-    overlayText.textContent = '読み込み中...';
+    overlayText.textContent = '読み込み中';
   }
   document.querySelector("#control > a#play").className = "disabled";
   document.querySelector("#control > a#stop").className = "disabled";
