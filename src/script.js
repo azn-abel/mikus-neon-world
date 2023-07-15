@@ -510,6 +510,8 @@ function switchLanguage() {
     document.getElementById("beatbar-header").innerHTML = "ビートバーの色";
     document.getElementById("lyrics-header").innerHTML = "歌詞の色";
     document.getElementById("overlay-text").innerHTML = "読み込み中...";
+    document.getElementById("language-select").innerHTML = "言語";
+    document.getElementById("volume-label").innerHTML = "音量";
 
     document.getElementById("kingJack").innerHTML = "king妃jack躍";
     document.getElementById("toLive").innerHTML = "生きること";
@@ -537,6 +539,8 @@ function switchLanguage() {
     document.getElementById("beatbar-header").innerHTML = "Beatbar Color";
     document.getElementById("lyrics-header").innerHTML = "Lyrics Color";
     document.getElementById("overlay-text").innerHTML = "Loading Player...";
+    document.getElementById("language-select").innerHTML = "Language";
+    document.getElementById("volume-label").innerHTML = "Volume";
 
     document.getElementById("kingJack").innerHTML = "king ki jack yaku";
     document.getElementById("toLive").innerHTML = "To live";
