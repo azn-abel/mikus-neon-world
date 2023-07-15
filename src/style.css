@@ -584,6 +584,10 @@ h1 {
   border: none;
 }
 
+.slidecontainer {
+  width: 100%;
+}
+
 /* Add some hover effects to buttons */
 .btn:hover, .open-button:hover {
   opacity: 1;
