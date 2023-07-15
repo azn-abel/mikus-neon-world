@@ -101,7 +101,6 @@ var player = new Player({
 
 const overlay = document.querySelector("#overlay");
 const popupOverlay = document.querySelector("#popup-overlay");
-const bar = document.querySelector("#bar");
 const textContainer = document.querySelector("#text");
 const seekbar = document.querySelector("#seekbar");
 const paintedSeekbar = seekbar.querySelector("div");
@@ -377,7 +376,6 @@ function changeSong(songIndex) {
     player.requestStop();
 
     // 再生を停止したら画面表示をリセットする
-    bar.className = "";
     resetChars();
   }
 
