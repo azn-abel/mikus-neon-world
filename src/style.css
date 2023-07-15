@@ -515,17 +515,17 @@ button {
 }
 
 .language-button {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
   padding: 20px;
   z-index: 4;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: rgba(255, 255, 255, 0.9);
+  /* background-color: rgba(0, 0, 0, 0.6);
+  color: rgba(255, 255, 255, 0.9); */
+  padding: 14px 20px;
+  background-color: rgb(99, 208, 226, 0.7);
+  border-radius: 10px;
 }
 
 .language-button:hover {
-  background-color: black;
+  background-color: rgba(99, 207, 226, 0.4);
 }
 
 h1 {
