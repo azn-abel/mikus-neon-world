@@ -51,7 +51,7 @@
         </div>
 
         <!-- Language options button -->
-        <button class="language-button" id="language-button" onclick="switchLanguage()">日本語</button>
+        <!-- <button class="language-button" id="language-button" onclick="switchLanguage()">日本語</button> -->
 
         <!-- Navigation links (hidden by default) -->
         <div id="myLinks">
@@ -70,35 +70,15 @@
             <h1 id="settings-header">Settings</h1>
             <div class="menu-items">
               <div class="item">
-                <p id="expression-header" for="expression">Expression</p>
-                <select name="expression container" id="expression">
-                  <option id="smile" value="smile">Smile</option>
-                  <option id="frown" value="frown">Frown</option>
-                  <option id="angry" value="angry">Angry</option>
-                  <option id="shy" value="shy">Shy</option>
-                </select>
-              </div>
-              <div class="item">
-                <p id="visual-header" for="visual">Visual Effects</p>
-                <select name="visual container" id="visual">
-                  <option id="low" value="low">Low</option>
-                  <option id="medium" value="medium">Medium</option>
-                  <option id="high" value="high">High</option>
-                </select>
-              </div>
-              <div class="item">
-                <p id="animation-header" for="animation">Animation</p>
-                <select name="animation container" id="animation">
-                  <option id="mouth" value="mouth">Mouth</option>
-                  <option id="speakers" value="speakers">Speakers</option>
-                  <option id="both" value="both">Both</option>
-                </select>
-              </div>
-              <div class="item">
                 <p id="beatbar-header">Beatbar Color</p>
                 <div class="beatbar container">
-                  <input type="color" id="bar-color1" value="#ff0000">
+                  <input type="color" id="bar-color1" value="#062f2b">
                   <input type="color" id="bar-color2" value="#00ffff">
+                </div>
+                <div>
+                  <p id="language-select">Language</p>
+                  <button type="button" id="language-button" onclick="switchLanguage()" class="language-button">English</button>
+                
                 </div>
               </div>
               <div class="item">
@@ -106,8 +86,16 @@
                 <div class="text container">
                   <input type="color" id="color-picker" value="#fddaff">
                 </div>
+                <div class="item">
+                  <p id="volume label">Volume</p>
+                  <div class="slidecontainer">
+                    <input type="range" min="0" max="100" value="80" class="slider" id="myRange">
+                  </div>
+                </div>
               </div>
-            </div>
+
+
+              
               <button type="button" class="btn cancel" onclick="closeForm()">OK</button>
 
             <!-- </form> -->
