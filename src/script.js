@@ -479,6 +479,11 @@ function closeForm(formName) {
   document.querySelector("#settings > a#musicButton").className = "";
 }
 
+function Volume(val) {
+  audioElement.volume = val/100;
+  console.log(val);
+}
+
 function switchLanguage() {
   if (currentLanguage == "en") {
     currentLanguage = "jp";
