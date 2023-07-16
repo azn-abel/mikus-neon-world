@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kosugi+Maru">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/regular.min.css">
+        <link rel='stylesheet' id='fontawesome-css'  href='https://use.fontawesome.com/releases/v5.0.1/css/all.css?ver=4.9.1' type='text/css' media='all' />
         <link rel="stylesheet" href="./style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
@@ -24,9 +25,6 @@
     </head>
     <body>
         <canvas id="bg"></canvas>
-
-        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Top Navigation Menu -->
         <div class="topnav">
@@ -45,25 +43,10 @@
             <div id="artist">artist: <span>-</span></div>
             <div id="song">song: <span>-</span></div>
           </div>
-          
-          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-          <a class="icon" id="burger-menu" onclick="burgerClick()">
-            <i class="fa fa-bars"></i>
-          </a>
         </div>
 
         <!-- Language options button -->
         <!-- <button class="language-button" id="language-button" onclick="switchLanguage()">日本語</button> -->
-
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks">
-            <button id="kingJack" class="selection" value=0 onclick="changeSong(value)">king ki jack yaku</button>
-            <button id="toLive" class="selection" value=1 onclick="changeSong(value)">To live</button>
-            <button id="shoumeisha" class="selection" value=2 onclick="changeSong(value)">shoumeisha</button>
-            <button id="neonLights" class="selection" value=3 onclick="changeSong(value)">Going through a sea of Neon lights</button>
-            <button id="mutation" class="selection" value=4 onclick="changeSong(value)">Mutation</button>
-            <button id="Entrust" class="selection" value=5 onclick="changeSong(value)">Entrust via 39</button>
-        </div>
 
         <div class="window-container">
           <!-- The form -->
@@ -107,14 +90,17 @@
           <!-- The form -->
           <div class="form-popup" id="musicForm">
             <!-- <form action="/action_page.php" class="form-container"> -->
-            <h1 id="settings-header">Change Song</h1>
+            <h1 id="change-song-header">Change Song</h1>
             <div class="menu-items">
-              
+              <button id="kingJack" class="selection" value=0 onclick="changeSong(value)">king ki jack yaku</button>
+              <button id="toLive" class="selection" value=1 onclick="changeSong(value)">To live</button>
+              <button id="shoumeisha" class="selection" value=2 onclick="changeSong(value)">shoumeisha</button>
+              <button id="neonLights" class="selection" value=3 onclick="changeSong(value)">Going through a sea of Neon lights</button>
+              <button id="mutation" class="selection" value=4 onclick="changeSong(value)">Mutation</button>
+              <button id="Entrust" class="selection" value=5 onclick="changeSong(value)">Entrust via 39</button>
             </div>
-
-
               
-            <button type="button" class="btn cancel" onclick="closeForm('musicForm')">OK</button>
+            <button type="button" class="btn cancel" onclick="closeForm('musicForm')">Cancel</button>
 
             <!-- </form> -->
           </div>

@@ -105,7 +105,6 @@ const textContainer = document.querySelector("#text");
 const seekbar = document.querySelector("#seekbar");
 const paintedSeekbar = seekbar.querySelector("div");
 const dropdownButton = document.querySelector("#dropbtn");
-const burgerMenu = document.querySelector("#burger-menu");
 let b, c;
 
 //Beatbar colors
@@ -179,6 +178,7 @@ function beginPlayback() {
       document.querySelector("#control > a#play").className = "";
       document.querySelector("#control > a#stop").className = "";
       document.querySelector("#settings > a#settei").className = "";
+      document.querySelector("#settings > a#musicButton").className = "";
     },
   
     /* 再生位置の情報が更新されたら呼ばれる */
@@ -343,12 +343,13 @@ function resetChars() {
 }
 
 function changeSong(songIndex) {
-  var x = document.getElementById("myLinks");
-  if (x.style.visibility === "visible") {
-    x.style.visibility = "hidden";
-  } else {
-    x.style.display = "visible";
-  }
+  closeForm("musicForm");
+  // var x = document.getElementById("myLinks");
+  // if (x.style.visibility === "visible") {
+  //   x.style.visibility = "hidden";
+  // } else {
+  //   x.style.display = "visible";
+  // }
   
   currentIdx = songIndex;
   currentUrl = SongList[songIndex].url;
@@ -378,6 +379,8 @@ function changeSong(songIndex) {
   
   overlay.className = "enabled";
   overlayText = document.getElementById('overlay-text');
+  let loadingCircle = document.getElementById('loader');
+  loadingCircle.style.visibility = ""
   if (currentLanguage == "en") {
     overlayText.textContent = 'Loading Player...';
   }
@@ -387,29 +390,17 @@ function changeSong(songIndex) {
   document.querySelector("#control > a#play").className = "disabled";
   document.querySelector("#control > a#stop").className = "disabled";
   document.querySelector("#settings > a#settei").className = "disabled";
-
-  var x = document.getElementById("myLinks");
-  x.style.visibility = "hidden";
+  document.querySelector("#settings > a#musicButton").className = "disabled";
 
   beginPlayback();
 }
 
-/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-function burgerClick() {
-  var x = document.getElementById("myLinks");
-  if (x.style.visibility === "visible") {
-    x.style.visibility = "hidden";
-  } else {
-    x.style.visibility = "visible";
-  }
-}
-
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
-  if (!event.target.matches('#myLinks') && !event.target.matches('.icon')) {
-    var x = document.getElementById("myLinks");
-    x.style.visibility = "hidden";
-  }
+  // if (!event.target.matches('#myLinks') && !event.target.matches('.icon')) {
+  //   var x = document.getElementById("myLinks");
+  //   x.style.visibility = "hidden";
+  // }
   if (overlay.className === 'ready') {
     overlay.className = 'disabled';
   }

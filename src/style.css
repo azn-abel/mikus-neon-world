@@ -231,6 +231,10 @@ canvas {
   font-size: 24px;
 }
 
+#musicButton {
+  font-weight: 900;
+}
+
 /* アーティストと楽曲の情報 / Artist and song info */
 #meta {
   padding-top: 9px;
@@ -410,19 +414,6 @@ canvas {
   height: 48px;
 }
 
-/* Hide the links inside the navigation menu (except for logo/home) */
-#myLinks {
-  display: flex;
-  flex-direction: column;
-  visibility: hidden;
-  width: fit-content;
-  z-index: 4;
-  position: absolute;
-  height: 120px;
-  top: 48px;
-  right: 0;
-}
-
 button {
   background: none;
   border: none;
@@ -443,39 +434,23 @@ button {
   z-index: 4;
 }
 
-/* Style the hamburger menu */
-.topnav a.icon {
-  /*background: rgb(99 208 226);*/
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 3;
-  color: rgb(99 208 226);
-  cursor: pointer;
-}
-
-/* Add a grey background color on mouse-over */
-.topnav a.icon:hover {
-  color: rgb(233, 47, 47);
-}
-
 /* Let mouse events pass through */
 .topnav a.icon i {
   pointer-events: none;
 }
 
 .selection{
-  background-color: rgb(99 208 226);
-  color: #333;
-  font-family: 'Wix MadeFor Text', 'Kosugi Maru', 'Lucida Sans', Verdana, sans-serif;
-  font-weight: bold;
-  height: 20px;
+  padding: 20px;
+  z-index: 4;
+  padding: 14px 20px;
+  background-color: rgb(99, 208, 226, 0.7);
+  border-radius: 10px;
+  white-space: nowrap;
+  margin: 3px;
 }
 
 .selection:hover {
-  color: #333;
-  background-color: rgb(233, 47, 47);
+  background-color: rgba(99, 207, 226, 0.4);
 }
 
 .miku-image {
@@ -610,12 +585,17 @@ h1 {
 .cancel {
   padding: 10px;
   width: 100%;
-  background-color: rgb(99 208 226);
+  background-color: rgba(36, 171, 195, 0.7);
   cursor: pointer;
   font-family: 'Wix Madefor Text', 'Lucida Sans', Verdana, sans-serif;
   font-weight: bold;
   color: #333;
   border: none;
+  border-radius: 10px;
+}
+
+.cancel:hover {
+  background-color: rgba(99, 207, 226, 0.4);
 }
 
 /* Slider stuff */
