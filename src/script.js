@@ -387,7 +387,7 @@ function changeSong(songIndex) {
     // トークンは https://developer.textalive.jp/profile で取得したものを使う
     app: { token: "test" },
     mediaElement: document.querySelector("#media"),
-    mediaBannerPosition: "bottom right"
+    mediaBannerPosition: "top right"
   
     // オプション一覧
     // https://developer.textalive.jp/packages/textalive-app-api/interfaces/playeroptions.html
