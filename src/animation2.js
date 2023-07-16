@@ -34,7 +34,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera( window.innerWidth / - 15, window.innerWidth / 15, window.innerHeight / 15, window.innerHeight / - 15, -5, 1000);
 // const camera = new THREE.OrthographicCamera( -10, 10, 10, -10, -5, 1000);
 camera.position.z = 10;
-camera.position.y = 1;
+camera.position.y = 0;
 
 
 // const controls = new OrbitControls( camera, renderer.domElement );

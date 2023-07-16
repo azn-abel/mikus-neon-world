@@ -316,16 +316,18 @@ canvas {
 /* 歌詞 / Lyrics */
 #lyrics {
   z-index: 1;
-  padding: 3em 0 0 2em;
+  padding: 0 0 0 0;
   line-height: 2em;
-  font-size: 40px;
+  font-size: calc(max(100vw, 100vh) / 40);
   font-family: "DotGothic16", "Shippori Mincho B1", serif;
   color: #fddaff;
   text-shadow: 2px 2px 3px #e4215a;
   user-select: none;
   cursor: pointer;
   position: absolute;
-  top: 10%;
+  left: 8vw;
+  top: 70vh;
+  max-width: 52vw;
   
   opacity: 1;
   /* 歌詞をちょっと回転させる / Rotate text */
@@ -356,7 +358,7 @@ canvas {
  */
 #text .noun {
   color: #ddf9ff;
-  font-size: 40px;
+  font-size: calc(max(100vw, 100vh) / 40);
 }
 
 /**
@@ -479,7 +481,7 @@ button {
 .miku-image {
   pointer-events: none;
   position: fixed;
-  left: 60%;
+  left: 60vw;
   bottom: 10vh;
   height: 80vh;
   z-index: 1;
@@ -489,7 +491,7 @@ button {
   pointer-events: none;
   position: fixed;
   bottom: 8vh;
-  left: 60%;
+  left: 60vw;
   height: 20vh;
   z-index: 1;
 }
