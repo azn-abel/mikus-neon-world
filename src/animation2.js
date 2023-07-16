@@ -131,9 +131,17 @@ cube6.scale.x = 10;
 
 const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load( './images/city.png' );
-const cloud = textureLoader.load('./images/2 - cloud1cropped.png');
+const cloud = textureLoader.load('./images/cloud1cropped.png');
+const cloud2 = textureLoader.load('./images/cloud2cropped.png');
+const cloud3 = textureLoader.load('./images/cloud3cropped.png');
+const cloud4 = textureLoader.load('./images/cloud4cropped.png');
+
+
 texture.encoding = THREE.sRGBEncoding;
 cloud.encoding = THREE.sRGBEncoding;
+cloud2.encoding = THREE.sRGBEncoding;
+cloud3.encoding = THREE.sRGBEncoding;
+cloud4.encoding = THREE.sRGBEncoding;
 
 const planeGeometry = new THREE.PlaneGeometry( 273.8, 139.32 );
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
@@ -141,16 +149,31 @@ const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 plane.position.z = -60
 scene.add(plane);
 
-const cloudGeometry = new THREE.PlaneGeometry( 90, 15 );
+const cloudGeometry = new THREE.PlaneGeometry( 85, 15 );
 const cloudMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: cloud, transparent: true, opacity: 1 });
+const cloud2Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: cloud2, transparent: true, opacity: 1 });
+const cloud3Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: cloud3, transparent: true, opacity: 1 });
+const cloud4Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: cloud4, transparent: true, opacity: 1 });
 const cloudMesh = new THREE.Mesh( cloudGeometry, cloudMaterial );
-const cloudMesh2 = new THREE.Mesh( cloudGeometry, cloudMaterial );
-cloudMesh.position.z = 0;
-cloudMesh.position.x = 20;
-cloudMesh2.position.z = -10;
-cloudMesh2.position.x = -10;
+const cloud2Mesh = new THREE.Mesh( cloudGeometry, cloud2Material );
+const cloud3Mesh = new THREE.Mesh( cloudGeometry, cloud3Material );
+const cloud4Mesh = new THREE.Mesh( cloudGeometry, cloud4Material );
+
+
+
+// cloudMesh.position.z =  0;
+// cloudMesh.position.x = 20;
+cloudMesh.position.set(20,10,0);
+cloud2Mesh.position.z = -10;
+cloud2Mesh.position.x = -10;
+cloud3Mesh.position.z = -5;
+cloud3Mesh.position.x = 50;
+cloud4Mesh.position.z = -5;
+cloud4Mesh.position.x = 15;
 scene.add(cloudMesh);
-scene.add(cloudMesh2);
+scene.add(cloud2Mesh);
+scene.add(cloud3Mesh);
+scene.add(cloud4Mesh);
 
 const clock = new THREE.Clock();
 let curr = 0;
@@ -229,17 +252,25 @@ function animate() {
     cube5.scale.y = ((sum5 / 1200) * 2 / 3) ** 1.5 + 1;
     cube6.scale.y = ((sum6 / 1200) * 2 / 3) ** 1.5 + 1;
 
-    if (cloudMesh.position.x < -160) {
-        cloudMesh.position.x = 160;
+    if (cloudMesh.position.x < -170) {
+        cloudMesh.position.x = 170;
+    }
+    if (cloud2Mesh.position.x < -170) {
+        cloud2Mesh.position.x = 170;
+    }
+    if (cloud3Mesh.position.x < -170) {
+        cloud3Mesh.position.x = 170;
+    }
+    if (cloud4Mesh.position.x < -170) {
+        cloud4Mesh.position.x = 170;
     }
 
-    if (cloudMesh2.position.x < -160) {
-        cloudMesh2.position.x = 160;
-    }
 
     if (!document.hidden) {
         cloudMesh.position.x -= diff * 1.3;
-        cloudMesh2.position.x -= diff * 2.3;
+        cloud2Mesh.position.x -= diff * 2.3;
+        cloud3Mesh.position.x -= diff * 2.8;
+        cloud4Mesh.position.x -= diff * 3.1;
     } else {
         console.log("hidden");
     }
