@@ -101,7 +101,6 @@ var player = new Player({
 
 const overlay = document.querySelector("#overlay");
 const popupOverlay = document.querySelector("#popup-overlay");
-const bar = document.querySelector("#bar");
 const textContainer = document.querySelector("#text");
 const seekbar = document.querySelector("#seekbar");
 const paintedSeekbar = seekbar.querySelector("div");
@@ -142,6 +141,8 @@ function beginPlayback() {
     onAppMediaChange() {
       // 画面表示をリセット
       overlay.className = "";
+      let loadingCircle = document.getElementById('loader');
+      loadingCircle.style.visibility = ""
       let overlayText = document.getElementById('overlay-text');
       if (currentLanguage === "en") {
         overlayText.textContent = 'Loading Player...';
@@ -149,7 +150,6 @@ function beginPlayback() {
       else {
         overlayText.textContent = '読み込み中...';
       }
-      bar.className = "";
       resetChars();
     },
   
@@ -167,6 +167,8 @@ function beginPlayback() {
     /* 再生コントロールができるようになったら呼ばれる */
     onTimerReady() {
       overlay.className = "ready";
+      let loadingCircle = document.getElementById('loader');
+      loadingCircle.style.visibility = "hidden"
       let overlayText = document.getElementById('overlay-text');
       if (currentLanguage === "en") {
         overlayText.textContent = 'Click to enter.';
@@ -191,9 +193,9 @@ function beginPlayback() {
       if (b !== beat) {
         if (beat) {
           requestAnimationFrame(() => {
-            bar.className = "active";
+            // bar.className = "active";
             requestAnimationFrame(() => {
-              bar.className = "active beat";
+              // bar.className = "active beat";
             });
           });
         }
@@ -261,7 +263,7 @@ document.querySelector("#control > a#stop").addEventListener("click", (e) => {
     player.requestStop();
 
     // 再生を停止したら画面表示をリセットする
-    bar.className = "";
+    // bar.className = "";
     resetChars();
   }
   return false;
@@ -360,7 +362,7 @@ function changeSong(songIndex) {
     player.requestStop();
 
     // 再生を停止したら画面表示をリセットする
-    bar.className = "";
+    // bar.className = "";
     resetChars();
   }
 
@@ -477,22 +479,24 @@ function switchLanguage() {
     currentLanguage = "jp";
     document.getElementById("language-button").innerHTML = "English";
     document.getElementById("settings-header").innerHTML = "設定";
-    document.getElementById("expression-header").innerHTML = "表情";
-    document.getElementById("smile").innerHTML = "笑顔";
-    document.getElementById("frown").innerHTML = "しかめ面";
-    document.getElementById("angry").innerHTML = "怒ってる";
-    document.getElementById("shy").innerHTML = "照れてる";
-    document.getElementById("visual-header").innerHTML = "ビジュアル効果";
-    document.getElementById("low").innerHTML = "低";
-    document.getElementById("medium").innerHTML = "中";
-    document.getElementById("high").innerHTML = "高";
-    document.getElementById("animation-header").innerHTML = "アニメーション";
-    document.getElementById("mouth").innerHTML = "口";
-    document.getElementById("speakers").innerHTML = "スピーカー";
-    document.getElementById("both").innerHTML = "両方";
+    // document.getElementById("expression-header").innerHTML = "表情";
+    // document.getElementById("smile").innerHTML = "笑顔";
+    // document.getElementById("frown").innerHTML = "しかめ面";
+    // document.getElementById("angry").innerHTML = "怒ってる";
+    // document.getElementById("shy").innerHTML = "照れてる";
+    // document.getElementById("visual-header").innerHTML = "ビジュアル効果";
+    // document.getElementById("low").innerHTML = "低";
+    // document.getElementById("medium").innerHTML = "中";
+    // document.getElementById("high").innerHTML = "高";
+    // document.getElementById("animation-header").innerHTML = "アニメーション";
+    // document.getElementById("mouth").innerHTML = "口";
+    // document.getElementById("speakers").innerHTML = "スピーカー";
+    // document.getElementById("both").innerHTML = "両方";
     document.getElementById("beatbar-header").innerHTML = "ビートバーの色";
     document.getElementById("lyrics-header").innerHTML = "歌詞の色";
     document.getElementById("overlay-text").innerHTML = "読み込み中...";
+    document.getElementById("language-select").innerHTML = "言語";
+    document.getElementById("volume-label").innerHTML = "音量";
 
     document.getElementById("kingJack").innerHTML = "king妃jack躍";
     document.getElementById("toLive").innerHTML = "生きること";
@@ -504,22 +508,24 @@ function switchLanguage() {
     currentLanguage = "en";
     document.getElementById("language-button").innerHTML = "日本語";
     document.getElementById("settings-header").innerHTML = "Settings";
-    document.getElementById("expression-header").innerHTML = "Expression";
-    document.getElementById("smile").innerHTML = "Smile";
-    document.getElementById("frown").innerHTML = "Frown";
-    document.getElementById("angry").innerHTML = "Angry";
-    document.getElementById("shy").innerHTML = "Shy";
-    document.getElementById("visual-header").innerHTML = "Visual Effects";
-    document.getElementById("low").innerHTML = "Low";
-    document.getElementById("medium").innerHTML = "Medium";
-    document.getElementById("high").innerHTML = "High";
-    document.getElementById("animation-header").innerHTML = "Animation";
-    document.getElementById("mouth").innerHTML = "Mouth";
-    document.getElementById("speakers").innerHTML = "Speakers";
-    document.getElementById("both").innerHTML = "Both";
+    // document.getElementById("expression-header").innerHTML = "Expression";
+    // document.getElementById("smile").innerHTML = "Smile";
+    // document.getElementById("frown").innerHTML = "Frown";
+    // document.getElementById("angry").innerHTML = "Angry";
+    // document.getElementById("shy").innerHTML = "Shy";
+    // document.getElementById("visual-header").innerHTML = "Visual Effects";
+    // document.getElementById("low").innerHTML = "Low";
+    // document.getElementById("medium").innerHTML = "Medium";
+    // document.getElementById("high").innerHTML = "High";
+    // document.getElementById("animation-header").innerHTML = "Animation";
+    // document.getElementById("mouth").innerHTML = "Mouth";
+    // document.getElementById("speakers").innerHTML = "Speakers";
+    // document.getElementById("both").innerHTML = "Both";
     document.getElementById("beatbar-header").innerHTML = "Beatbar Color";
     document.getElementById("lyrics-header").innerHTML = "Lyrics Color";
     document.getElementById("overlay-text").innerHTML = "Loading Player...";
+    document.getElementById("language-select").innerHTML = "Language";
+    document.getElementById("volume-label").innerHTML = "Volume";
 
     document.getElementById("kingJack").innerHTML = "king ki jack yaku";
     document.getElementById("toLive").innerHTML = "To live";
