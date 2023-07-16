@@ -135,7 +135,7 @@ const cloud = textureLoader.load('./images/cloud.png');
 texture.encoding = THREE.sRGBEncoding;
 cloud.encoding = THREE.sRGBEncoding;
 
-const planeGeometry = new THREE.PlaneGeometry( 259.2, 145.8 );
+const planeGeometry = new THREE.PlaneGeometry( 273.8, 139.32 );
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
 const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 plane.position.z = -60
