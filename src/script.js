@@ -224,8 +224,7 @@ function beginPlayback() {
         resting = true;
 
         if (restCount >= 4) {
-          while (textContainer.firstChild)
-          textContainer.removeChild(textContainer.firstChild);
+          document.getElementById("lyrics").style.opacity = document.getElementById("lyrics").style.opacity - .1;
         }
       }
 
@@ -305,6 +304,7 @@ function newChar(current) {
   // https://developer.textalive.jp/packages/textalive-app-api/interfaces/iword.html#pos
   restCount = 0;
   resting = false;
+  document.getElementById("lyrics").style.opacity = 1;
   if (prevClasses.includes("lastChar")) {
     resetChars();
   }
