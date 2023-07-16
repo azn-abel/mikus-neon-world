@@ -415,13 +415,14 @@ window.onclick = function(event) {
   }
 }
 
-function openForm() {
-  const form = document.getElementById("myForm")
+function openForm(formName) {
+  const form = document.getElementById(formName)
   form.style.display = "flex";
   popupOverlay.className = "enabled";
   document.querySelector("#control > a#play").className = "disabled";
   document.querySelector("#control > a#stop").className = "disabled";
   document.querySelector("#settings > a#settei").className = "disabled";
+  document.querySelector("#settings > a#musicButton").className = "disabled";
 }
 
 function getBarColors() {
@@ -441,37 +442,41 @@ function getBarColors() {
   console.log( r2 + ", " + g2 + ", " + b2 );
 }
 
-function closeForm() {
-  // Handle changes in font color
-  var mainColor = parseInt(document.getElementById("color-picker").value.substring(1, 7), 16);
-  shadowColor = mainColor - 0x555555;
-  nounColor = mainColor + 0x555555;
+function closeForm(formName) {
+  
+  if (formName == "myForm") {
+    // Handle changes in font color
+    var mainColor = parseInt(document.getElementById("color-picker").value.substring(1, 7), 16);
+    shadowColor = mainColor - 0x555555;
+    nounColor = mainColor + 0x555555;
 
-  if (shadowColor < 0) {
-    shadowColor = 0;
+    if (shadowColor < 0) {
+      shadowColor = 0;
+    }
+    if (nounColor > 0xffffff) {
+      nounColor = 0xffffff;
+    }
+    console.log(mainColor);
+    console.log(shadowColor);
+    console.log(nounColor);
+    console.log("#" + mainColor.toString(16) + ", #" + shadowColor.toString(16) + ", #" + nounColor.toString(16));
+
+    document.getElementById("lyrics").style.color = "#" + mainColor.toString(16); 
+    document.getElementById("lyrics").style.textShadow = "2px 2px 3px #" + shadowColor.toString(16);
+    document.querySelectorAll(".noun").color = "#" + nounColor.toString(16); 
+
+    // Handle changes in beatbar color
+
+    getBarColors();
   }
-  if (nounColor > 0xffffff) {
-    nounColor = 0xffffff;
-  }
-  console.log(mainColor);
-  console.log(shadowColor);
-  console.log(nounColor);
-  console.log("#" + mainColor.toString(16) + ", #" + shadowColor.toString(16) + ", #" + nounColor.toString(16));
-
-  document.getElementById("lyrics").style.color = "#" + mainColor.toString(16); 
-  document.getElementById("lyrics").style.textShadow = "2px 2px 3px #" + shadowColor.toString(16);
-  document.querySelectorAll(".noun").color = "#" + nounColor.toString(16); 
-
-  // Handle changes in beatbar color
-
-  getBarColors();
 
   // Close form
-  document.getElementById("myForm").style.display = "none";
+  document.getElementById(formName).style.display = "none";
   popupOverlay.className = "disabled";
   document.querySelector("#control > a#play").className = "";
   document.querySelector("#control > a#stop").className = "";
   document.querySelector("#settings > a#settei").className = "";
+  document.querySelector("#settings > a#musicButton").className = "";
 }
 
 function switchLanguage() {

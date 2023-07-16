@@ -36,7 +36,8 @@
           </div>
           
           <div id="settings" class="far">
-            <a id="settei" class="disabled" onclick="openForm()">&#xf185;</a>
+            <a id="settei" class="disabled" onclick="openForm('myForm')">&#xf185;</a>
+            <a id="musicButton" class="disabled" onclick="openForm('musicForm')">&#xf001;</a>
           </div>
           <!-- アーティストと楽曲の情報 / Artist and song info -->
           <div id="meta">
@@ -96,7 +97,23 @@
 
 
               
-              <button type="button" class="btn cancel" onclick="closeForm()">OK</button>
+              <button type="button" class="btn cancel" onclick="closeForm('myForm')">OK</button>
+
+            <!-- </form> -->
+          </div>
+        </div>
+        <div class="window-container">
+          <!-- The form -->
+          <div class="form-popup" id="musicForm">
+            <!-- <form action="/action_page.php" class="form-container"> -->
+            <h1 id="settings-header">Change Song</h1>
+            <div class="menu-items">
+              
+            </div>
+
+
+              
+            <button type="button" class="btn cancel" onclick="closeForm('musicForm')">OK</button>
 
             <!-- </form> -->
           </div>
