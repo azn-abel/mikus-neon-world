@@ -222,12 +222,12 @@ function animate() {
     diff = curr - prev;
     prev = curr;
 
-    cube1.scale.y = ((sum1 / 1200) * 2 / 3) ** 1.5;
-    cube2.scale.y = ((sum2 / 1200) * 2 / 3) ** 1.5;
-    cube3.scale.y = ((sum3 / 1200) * 2 / 3) ** 1.5;
-    cube4.scale.y = ((sum4 / 1200) * 2 / 3) ** 1.5;
-    cube5.scale.y = ((sum5 / 1200) * 2 / 3) ** 1.5;
-    cube6.scale.y = ((sum6 / 1200) * 2 / 3) ** 1.5;
+    cube1.scale.y = ((sum1 / 1200) * 2 / 3) ** 1.5 + 1;
+    cube2.scale.y = ((sum2 / 1200) * 2 / 3) ** 1.5 + 1;
+    cube3.scale.y = ((sum3 / 1200) * 2 / 3) ** 1.5 + 1;
+    cube4.scale.y = ((sum4 / 1200) * 2 / 3) ** 1.5 + 1;
+    cube5.scale.y = ((sum5 / 1200) * 2 / 3) ** 1.5 + 1;
+    cube6.scale.y = ((sum6 / 1200) * 2 / 3) ** 1.5 + 1;
 
     if (cloudMesh.position.x < -20) {
         cloudMesh.position.x = 20;
