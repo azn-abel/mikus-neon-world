@@ -34,7 +34,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.OrthographicCamera( window.innerWidth / - 15, window.innerWidth / 15, window.innerHeight / 15, window.innerHeight / - 15, -5, 1000);
 // const camera = new THREE.OrthographicCamera( -10, 10, 10, -10, -5, 1000);
 camera.position.z = 10;
-camera.position.y = 1;
+camera.position.y = 0;
 
 
 // const controls = new OrbitControls( camera, renderer.domElement );
@@ -131,7 +131,7 @@ cube6.scale.x = 10;
 
 const textureLoader = new THREE.TextureLoader();
 const texture = textureLoader.load( './images/city.png' );
-const cloud = textureLoader.load('./images/cloud.png');
+const cloud = textureLoader.load('./images/2 - cloud1cropped.png');
 texture.encoding = THREE.sRGBEncoding;
 cloud.encoding = THREE.sRGBEncoding;
 
@@ -141,7 +141,7 @@ const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 plane.position.z = -60
 scene.add(plane);
 
-const cloudGeometry = new THREE.PlaneGeometry( 10.24, 5.76 );
+const cloudGeometry = new THREE.PlaneGeometry( 90, 15 );
 const cloudMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: cloud, transparent: true, opacity: 1 });
 const cloudMesh = new THREE.Mesh( cloudGeometry, cloudMaterial );
 const cloudMesh2 = new THREE.Mesh( cloudGeometry, cloudMaterial );
