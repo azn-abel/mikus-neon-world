@@ -1,7 +1,7 @@
 ﻿# Wolfpack Mirai 2023
 A music visualizer created by a humble group of college students in recognition of Hatsune Miku Magical Mirai 2023.
 
-[Click here for a Japanese version of this readme](#Features)
+[日本語はこちら](#Features)
 <hr/>
 
 **Developers:** Abel Lu, Christopher Lee, Luke Sbityakov  
@@ -35,3 +35,38 @@ look forward to hearing the results!
 
 All the best,  
 Wolfpack Mirai 2023
+
+<hr/>  
+
+# Wolfpack Mirai 2023 - JP
+
+ただの学生が初音ミクの「マジカルミライ２０２３」のために作った音楽ビジュアライザです
+
+<hr/>
+
+**デベロッパー：** Abel Lu, Christopher Lee, Luke Sbityakov
+**イラストレーター：** Anji
+
+### 機能
+- 曲の選択肢
+  - このコンテストの６曲を全部使える 
+- 音楽の見える化 
+  - 音楽の強度に合わせて明かる6本のビートバー
+- カスタムイラスト
+  - 今年の衣装を着てる初音ミクと美しい背景
+- 自由に使える
+  - ユーザーは自由に使えるためのオプションが付いてる。例えばアニメーションをエネーブルやディセーブルしたり、シーンを変えたりすることはできる
+- 初音ミクは世界で一番！
+  - ワールドイズマインの言葉
+
+
+### 審査員への言葉
+
+審査員の皆様、
+
+僕たちは日本の文化やメディアに興味あるアメリカ人の大学生です。数月前、初音ミクの英語フェースブックで「マジカルミライ２０２３プログラミング・コンテスト」を知りました。このコンテストはWEBプログラミングの勉強になるだけではなく、日本文化、そして初音ミクへの鑑賞を表示する機会だと思って参加しました。
+
+このコンテストのための時間と努力ありがとうございます。結果が出る時をお楽しみにしています！
+
+Wolfpack Mirai 2023のみんなより
+
