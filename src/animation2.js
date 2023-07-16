@@ -1,9 +1,8 @@
-import * as THREE from 'three'; 
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
-import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import * as THREE from 'three';
+import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
+import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
+import {ShaderPass} from 'three/addons/postprocessing/ShaderPass.js';
+import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
 
 THREE.ColorManagement.enabled = false; // TODO: Confirm correct color management.
 
@@ -30,8 +29,14 @@ document.body.appendChild( renderer.domElement );
 
 const scene = new THREE.Scene();
 
-
-const camera = new THREE.OrthographicCamera( window.innerWidth / - 15, window.innerWidth / 15, window.innerHeight / 15, window.innerHeight / - 15, -5, 1000);
+const initialZoomFactor = calculateZoomFactor();
+const camera = new THREE.OrthographicCamera(
+    window.innerWidth / - initialZoomFactor,
+    window.innerWidth / initialZoomFactor,
+    window.innerHeight / initialZoomFactor,
+    window.innerHeight / - initialZoomFactor,
+    -5,
+    1000);
 // const camera = new THREE.OrthographicCamera( -10, 10, 10, -10, -5, 1000);
 camera.position.z = 10;
 camera.position.y = 0;
@@ -238,18 +243,26 @@ const updateColor = (time) => {
 
 animate();
 
+function calculateZoomFactor() {
+
+    return window.innerHeight / 100 + 7;
+
+}
+
 window.onresize = function () {
 
     // Get the new size of the window
     const width = window.innerWidth;
     const height = window.innerHeight;
 
+    const zoomFactor = calculateZoomFactor();
+
 
     // Update the camera's parameters with the new aspect ratio
-    camera.left = width / - 15;
-    camera.right = width / 15;
-    camera.top = height / 15;
-    camera.bottom = height / -15;
+    camera.left = width / - zoomFactor;
+    camera.right = width / zoomFactor;
+    camera.top = height / zoomFactor;
+    camera.bottom = height / -zoomFactor;
 
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
@@ -405,4 +418,4 @@ function updateCameraOnResize() {
     renderer.setSize(width, height);
 }
 
-window.addEventListener('resize', updateCameraOnResize)
+//window.addEventListener('resize', updateCameraOnResize)
