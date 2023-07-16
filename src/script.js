@@ -177,6 +177,7 @@ function beginPlayback() {
       else {
         overlayText.textContent = 'クリックして進む';
       }
+      console.log(navigator.userAgent)
       document.querySelector("#control > a#play").className = "";
       document.querySelector("#control > a#stop").className = "";
       document.querySelector("#settings > a#settei").className = "";

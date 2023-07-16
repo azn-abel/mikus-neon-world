@@ -252,8 +252,16 @@ function calculateZoomFactor() {
 window.onresize = function () {
 
     // Get the new size of the window
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isIOS = /iphone|ipad|ipod/.test(userAgent);
+
+    if (isIOS) {
+        width = width * 2
+    }
+
 
     const zoomFactor = calculateZoomFactor();
 
