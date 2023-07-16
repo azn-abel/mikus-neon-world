@@ -30,7 +30,7 @@ entered because we saw it as an opportunity not only to learn about web
 development, but also to express our appreciation for Japanese culture and
 Hatsune Miku.
 
-Thank you for the time and efforts you all have dedicated ot this competition. We
+Thank you for the time and efforts you all have dedicated to this competition. We
 look forward to hearing the results!
 
 All the best,  
