@@ -319,7 +319,7 @@ canvas {
   padding: 0 0 0 0;
   line-height: 2em;
   font-size: calc(max(100vw, 100vh) / 40);
-  font-family: "DotGothic16", "Shippori Mincho B1", serif;
+  font-family: "Noto Sans JP", "DotGothic16", "Shippori Mincho B1", serif;
   color: #fddaff;
   text-shadow: 2px 2px 3px #e4215a;
   user-select: none;
