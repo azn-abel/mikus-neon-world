@@ -107,6 +107,8 @@ const paintedSeekbar = seekbar.querySelector("div");
 const dropdownButton = document.querySelector("#dropbtn");
 let b, c;
 
+let resting = false;
+let restCount = 0;
 //Beatbar colors
 let r1, r2, g1, g2, b1, b2;
 
@@ -200,6 +202,9 @@ function beginPlayback() {
           });
         }
         b = beat;
+        if (resting) {
+          restCount += 1;
+        }
       }
   
       // 歌詞情報がなければこれで処理を終わる
@@ -214,6 +219,16 @@ function beginPlayback() {
   
       // 500ms先に発声される文字を取得
       let current = c || player.video.firstChar;
+
+      if (!current.next || current.next.startTime - current.startTime > 1500) {
+        resting = true;
+
+        if (restCount >= 4) {
+          while (textContainer.firstChild)
+          textContainer.removeChild(textContainer.firstChild);
+        }
+      }
+
       while (current && current.startTime < position) {
         // 新しい文字が発声されようとしている
         if (c !== current) {
@@ -288,7 +303,8 @@ var prevClasses = []
 function newChar(current) {
   // 品詞 (part-of-speech)
   // https://developer.textalive.jp/packages/textalive-app-api/interfaces/iword.html#pos
-  
+  restCount = 0;
+  resting = false;
   if (prevClasses.includes("lastChar")) {
     resetChars();
   }
