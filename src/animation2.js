@@ -135,13 +135,27 @@ const cloud = textureLoader.load('./images/cloud1cropped.png');
 const cloud2 = textureLoader.load('./images/cloud2cropped.png');
 const cloud3 = textureLoader.load('./images/cloud3cropped.png');
 const cloud4 = textureLoader.load('./images/cloud4cropped.png');
-
+const building1 = textureLoader.load('./images/building1.png');
+const building2 = textureLoader.load('./images/building2.png');
+const building3 = textureLoader.load('./images/building3.png');
+const building4 = textureLoader.load('./images/building4.png');
+const building5 = textureLoader.load('./images/building5.png');
+const building6 = textureLoader.load('./images/building6.png');
+const building7 = textureLoader.load('./images/building7.png');
 
 texture.encoding = THREE.sRGBEncoding;
 cloud.encoding = THREE.sRGBEncoding;
 cloud2.encoding = THREE.sRGBEncoding;
 cloud3.encoding = THREE.sRGBEncoding;
 cloud4.encoding = THREE.sRGBEncoding;
+
+building1.encoding = THREE.sRGBEncoding;
+building2.encoding = THREE.sRGBEncoding;
+building3.encoding = THREE.sRGBEncoding;
+building4.encoding = THREE.sRGBEncoding;
+building5.encoding = THREE.sRGBEncoding;
+building6.encoding = THREE.sRGBEncoding;
+building7.encoding = THREE.sRGBEncoding;
 
 const planeGeometry = new THREE.PlaneGeometry( 273.8, 139.32 );
 const planeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
@@ -159,21 +173,54 @@ const cloud2Mesh = new THREE.Mesh( cloudGeometry, cloud2Material );
 const cloud3Mesh = new THREE.Mesh( cloudGeometry, cloud3Material );
 const cloud4Mesh = new THREE.Mesh( cloudGeometry, cloud4Material );
 
+const building1Geometry = new THREE.PlaneGeometry( 35, 79 );
+const building1Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: building1, transparent: true, opacity: 1 });
+const building2Geometry = new THREE.PlaneGeometry( 28, 45 );
+const building2Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: building2, transparent: true, opacity: 1 });
+const building3Geometry = new THREE.PlaneGeometry( 36, 88 );
+const building3Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: building3, transparent: true, opacity: 1 });
+const building4Geometry = new THREE.PlaneGeometry( 21, 86 );
+const building4Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: building4, transparent: true, opacity: 1 });
+const building5Geometry = new THREE.PlaneGeometry( 34, 81 );
+const building5Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: building5, transparent: true, opacity: 1 });
+const building6Geometry = new THREE.PlaneGeometry( 44, 107 );
+const building6Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: building6, transparent: true, opacity: 1 });
+const building7Geometry = new THREE.PlaneGeometry( 35, 56 );
+const building7Material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: building7, transparent: true, opacity: 1 });
+const building1Mesh = new THREE.Mesh( building1Geometry, building1Material );
+const building2Mesh = new THREE.Mesh( building2Geometry, building2Material );
+const building3Mesh = new THREE.Mesh( building3Geometry, building3Material );
+const building4Mesh = new THREE.Mesh( building4Geometry, building4Material );
+const building5Mesh = new THREE.Mesh( building5Geometry, building5Material );
+const building6Mesh = new THREE.Mesh( building6Geometry, building6Material );
+const building7Mesh = new THREE.Mesh( building7Geometry, building7Material );
 
-
-// cloudMesh.position.z =  0;
-// cloudMesh.position.x = 20;
-cloudMesh.position.set(20,10,0);
-cloud2Mesh.position.z = -10;
-cloud2Mesh.position.x = -10;
-cloud3Mesh.position.z = -5;
-cloud3Mesh.position.x = 50;
-cloud4Mesh.position.z = -5;
-cloud4Mesh.position.x = 15;
+// Cloud positions
+cloudMesh.position.set(20,35,-5);
+cloud2Mesh.position.set(-10,12,-20);
+cloud3Mesh.position.set(50,25,-5);
+cloud4Mesh.position.set(15, 45, -15);
 scene.add(cloudMesh);
 scene.add(cloud2Mesh);
 scene.add(cloud3Mesh);
 scene.add(cloud4Mesh);
+
+building1Mesh.position.set(90, -10, -10);
+building2Mesh.position.set(0, -10, -10);
+building3Mesh.position.set(-30, -10 ,-10);
+building4Mesh.position.set(-50, -10, -10);
+building5Mesh.position.set(130, -10, -10);
+building6Mesh.position.set(60, -10, -10);
+building7Mesh.position.set(-110, -10, -10);
+scene.add(building1Mesh);
+scene.add(building2Mesh);
+scene.add(building3Mesh);
+scene.add(building4Mesh);
+scene.add(building5Mesh);
+scene.add(building6Mesh);
+scene.add(building7Mesh);
+
+
 
 const clock = new THREE.Clock();
 let curr = 0;
@@ -269,8 +316,8 @@ function animate() {
     if (!document.hidden) {
         cloudMesh.position.x -= diff * 1.3;
         cloud2Mesh.position.x -= diff * 2.3;
-        cloud3Mesh.position.x -= diff * 2.8;
-        cloud4Mesh.position.x -= diff * 3.1;
+        cloud3Mesh.position.x -= diff * 1.8;
+        cloud4Mesh.position.x -= diff * 2.9;
     } else {
         console.log("hidden");
     }
