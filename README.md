@@ -1,5 +1,7 @@
 ﻿# Wolfpack Mirai 2023
-A music visualizer created in recognition of Hatsune Miku Magical Mirai 2023
+A music visualizer created by a humble group of college students in recognition of Hatsune Miku Magical Mirai 2023.
+
+[Click here for a Japanese version of this readme](#Features)
 <hr/>
 
 **Developers:** Abel Lu, Christopher Lee, Luke Sbityakov  
