@@ -229,17 +229,17 @@ function animate() {
     cube5.scale.y = ((sum5 / 1200) * 2 / 3) ** 1.5 + 1;
     cube6.scale.y = ((sum6 / 1200) * 2 / 3) ** 1.5 + 1;
 
-    if (cloudMesh.position.x < -20) {
-        cloudMesh.position.x = 20;
+    if (cloudMesh.position.x < -160) {
+        cloudMesh.position.x = 160;
     }
 
-    if (cloudMesh2.position.x < -30) {
-        cloudMesh2.position.x = 30;
+    if (cloudMesh2.position.x < -160) {
+        cloudMesh2.position.x = 160;
     }
 
     if (!document.hidden) {
-        cloudMesh.position.x -= diff * 0.8;
-        cloudMesh2.position.x -= diff * 0.8;
+        cloudMesh.position.x -= diff * 1.3;
+        cloudMesh2.position.x -= diff * 2.3;
     } else {
         console.log("hidden");
     }
