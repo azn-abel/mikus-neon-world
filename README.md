@@ -45,6 +45,7 @@ Wolfpack Mirai 2023
 <hr/>
 
 **デベロッパー：** Abel Lu, Christopher Lee, Luke Sbityakov
+
 **イラストレーター：** Anji
 
 ### 機能
