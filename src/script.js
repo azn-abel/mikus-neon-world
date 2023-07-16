@@ -474,6 +474,11 @@ function closeForm() {
   document.querySelector("#settings > a#settei").className = "";
 }
 
+function Volume(val) {
+  audioElement.volume = val/100;
+  console.log(val);
+}
+
 function switchLanguage() {
   if (currentLanguage == "en") {
     currentLanguage = "jp";
