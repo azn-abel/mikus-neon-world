@@ -139,7 +139,7 @@ Wolfpack Mirai 2023
       - 「このアプリケーションで開く」にマウスを合わせる
       - 「ブラウザー」にマウスを合わせてブラウザーを選択する
 - **デプロイ**
-  - 現在このアプリはhttps://azn-abel.github.io/mikus-neon-worldの`deploy`ブランチでデプロイされている
+  - 現在このアプリはhttps://azn-abel.github.io/mikus-neon-world の`deploy`ブランチでデプロイされている
   - その`deploy`ブランチはHTTPサーバーにデプロイすることができる
 
 ## 審査員への言葉
