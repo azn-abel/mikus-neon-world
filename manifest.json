@@ -1,0 +1,33 @@
+{
+    "short_name": "Neon World",
+    "name": "Hatsune Miku's Neon World",
+    "version": "1.0.0",
+    "description": "Music Visualizer for Hatsune Miku Magical Mirai 2023",
+    "manifest_version": 2,
+    "icons": [
+      {
+        "src": "./thumbnail.png",
+        "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "./thumbnail.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "./thumbnail.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "start_url": "./?mode=pwa",
+    "display": "fullscreen",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+}
+  
