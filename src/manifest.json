@@ -1,13 +1,26 @@
 {
-    "name": "Queen of the City",
+    "short_name": "WPM 2023",
+    "name": "Wolfpack Mirai 2023",
     "version": "1.0.0",
     "description": "Music Visualizer for Hatsune Miku Magical Mirai 2023",
     "manifest_version": 2,
-    "icons": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": ".png"
-    },
+    "icons": [
+      {
+        "src": "vite.svg",
+        "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
+      },
+      {
+        "src": "vite.svg",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "vite.svg",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
     "permissions": [
       "activeTab",
       "storage"
