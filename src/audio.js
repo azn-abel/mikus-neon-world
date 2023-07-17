@@ -24,11 +24,9 @@ const initializeAudio = () => {
 }
  
 const handleAudioElement = (audioElement) => { 
-    console.log(audioElement); 
     audioElement.src = 'audio/' + currentIdx + '.mp3';
     // Connect the audio element to the analyser node
     var source = audioCtx.createMediaElementSource(audioElement);
-    console.log(audioCtx.sampleRate);
     source.connect(analyser);
     analyser.connect(audioCtx.destination);
 
@@ -42,10 +40,7 @@ const handleAudioElement = (audioElement) => {
     function updateFrequencyData() {
         if (x % 100 == 0) {
             // console.log(JSON.stringify(dataArray));
-            
-            console.log(sum1);  
-            console.log(sum2);            
-            console.log(sum3);            
+           
         }
         x++;
 

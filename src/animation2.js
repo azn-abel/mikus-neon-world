@@ -201,8 +201,8 @@ const building6Mesh = new THREE.Mesh( building6Geometry, building6Material );
 const building7Mesh = new THREE.Mesh( building7Geometry, building7Material );
 
 // Cloud positions
-cloudMesh.position.set(20,35,-5);
-cloud2Mesh.position.set(-80,12,-15);
+cloudMesh.position.set(135,35,-5);
+cloud2Mesh.position.set(-70,12,-15);
 cloud3Mesh.position.set(50,25,-11);
 cloud4Mesh.position.set(105, 45, -9);
 scene.add(cloudMesh);
@@ -215,7 +215,7 @@ building2Mesh.position.set(20, -15, -5);
 building3Mesh.position.set(80, 0 ,-16);
 building4Mesh.position.set(115, 20, -21);
 building5Mesh.position.set(-110, 0, -10);
-building6Mesh.position.set(-40, -5, -12);
+building6Mesh.position.set(-40, -5, -8);
 building7Mesh.position.set(105, -10, -8);
 scene.add(building1Mesh);
 scene.add(building2Mesh);
@@ -344,7 +344,7 @@ function animate() {
     if (!document.hidden) {
         cloudMesh.position.x -= diff * 1.3;
         cloud2Mesh.position.x -= diff * 2.3;
-        cloud3Mesh.position.x -= diff * 1.8;
+        cloud3Mesh.position.x -= diff * 1.6;
         cloud4Mesh.position.x -= diff * 2.9;
     } else {
         console.log("hidden");
@@ -359,9 +359,6 @@ function animate() {
 }
 
 function flipColors() {
-  console.log("flipped");
-  console.log( r1 / 255 + ", " + g1 / 255 + ", " + b1 / 255 );
-  console.log( r2 / 255 + ", " + g2 / 255 + ", " + b2 / 255 );
   if (red == r1) {
     red = r2;
   }
