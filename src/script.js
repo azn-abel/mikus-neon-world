@@ -84,13 +84,13 @@ var glowEnabled = true;
 var speakerEnabled = true;
 
 //Song information for the api
-var currentIdx = 0;
-var currentUrl = SongList[0].url;
-var currentBeatId = SongList[0].beatId;
-var currentChordId = SongList[0].chordId;
-var currentRepetitiveSegmentId = SongList[0].repetitiveSegmentId;
-var currentLyricId = SongList[0].lyricId;
-var currentLyricDiffId= SongList[0].lyricDiffId;
+var currentIdx = 3;
+var currentUrl = SongList[3].url;
+var currentBeatId = SongList[3].beatId;
+var currentChordId = SongList[3].chordId;
+var currentRepetitiveSegmentId = SongList[3].repetitiveSegmentId;
+var currentLyricId = SongList[3].lyricId;
+var currentLyricDiffId= SongList[3].lyricDiffId;
 // TextAlive Player を初期化
 var player = new Player({
   // トークンは https://developer.textalive.jp/profile で取得したものを使う
@@ -127,17 +127,17 @@ function beginPlayback() {
         popupOverlay.className = "disabled";
         // king妃jack躍 / 宮守文学 feat. 初音ミク
         // https://developer.textalive.jp/events/magicalmirai2023/#snippets
-        player.createFromSongUrl(currentUrl);
+        player.createFromSongUrl(currentUrl, {
+          video: {
+            beatId: currentBeatId,
+            chordId: currentChordId,
+            repetitiveSegmentId: currentRepetitiveSegmentId,
+            lyricId: currentLyricId,
+            lyricDiffId: currentLyricDiffId
+          }
+        });
         player.isPlaying = false;
-        // , {
-        //   video: {
-        //     beatId: currentBeatId,
-        //     chordId: currentChordId,
-        //     repetitiveSegmentId: currentRepetitiveSegmentId,
-        //     lyricId: currentLyricId,
-        //     lyricDiffId: currentLyricDiffId
-        //   }
-        // });
+
       }
     },
   
@@ -531,6 +531,7 @@ function switchLanguage() {
     currentLanguage = "jp";
     document.getElementById("language-button").innerHTML = "English";
     document.getElementById("settings-header").innerHTML = "設定";
+    document.getElementById("landscape-warning").innerHTML = "横向きでご使用ください"
     // document.getElementById("expression-header").innerHTML = "表情";
     // document.getElementById("smile").innerHTML = "笑顔";
     // document.getElementById("frown").innerHTML = "しかめ面";
@@ -566,6 +567,8 @@ function switchLanguage() {
     currentLanguage = "en";
     document.getElementById("language-button").innerHTML = "日本語";
     document.getElementById("settings-header").innerHTML = "Settings";
+    document.getElementById("landscape-warning").innerHTML = "This app is best experienced in landscape mode"
+
     // document.getElementById("expression-header").innerHTML = "Expression";
     // document.getElementById("smile").innerHTML = "Smile";
     // document.getElementById("frown").innerHTML = "Frown";
