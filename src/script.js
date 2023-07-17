@@ -495,6 +495,14 @@ function Volume(val) {
   console.log(val);
 }
 
+  window.onkeydown = function( esc ) {
+    if ( esc.keyCode == 27 ) {
+      closeForm('myForm');
+      closeForm('musicForm');
+      console.log('esced');
+    };
+  };
+
 function handleGlowChange() {
   const glowButton = document.getElementById("glow-button");
   if (glowEnabled) {
