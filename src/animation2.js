@@ -306,10 +306,12 @@ function animate() {
     if (beat !== b) {
         if (b) {
           flipColors();
-          speaker.classList.add("speaker-beat");
-          setTimeout(() => {
-              speaker.classList.remove("speaker-beat")
-          }, 150)
+          if (speakerEnabled) {
+              speaker.classList.add("speaker-beat");
+              setTimeout(() => {
+                  speaker.classList.remove("speaker-beat")
+              }, 150)
+          }
         }
     }
     beat = b;
@@ -382,12 +384,24 @@ function flipColors() {
 
 function renderBloom() {
 
-    scene.traverse( darkenNonBloomed );
+    if (glowEnabled) {
+        scene.traverse(darkenNonBloomed)
+    } else {
+        scene.traverse(darkenAll)
+    }
     bloomComposer.render();
     scene.traverse( restoreMaterial );
 
 }
 
+function darkenAll( obj ) {
+    if ( obj.isMesh ) {
+
+        materials[ obj.uuid ] = obj.material;
+        obj.material = darkMaterial;
+
+    }
+}
 function darkenNonBloomed( obj ) {
 
     if ( obj.isMesh && bloomLayer.test( obj.layers ) === false ) {

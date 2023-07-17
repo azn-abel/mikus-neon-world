@@ -80,6 +80,9 @@ const SongList = [
 //Current display language for the settings
 var currentLanguage = "en";
 
+var glowEnabled = true;
+var speakerEnabled = true;
+
 //Song information for the api
 var currentIdx = 0;
 var currentUrl = SongList[0].url;
@@ -490,6 +493,26 @@ function closeForm(formName) {
 function Volume(val) {
   audioElement.volume = val/100;
   console.log(val);
+}
+
+function handleGlowChange() {
+  const glowButton = document.getElementById("glow-button");
+  if (glowEnabled) {
+    glowButton.innerHTML = "Off"
+  } else {
+    glowButton.innerHTML = "On"
+  }
+  glowEnabled = !glowEnabled
+}
+
+function handleSpeakerChange() {
+  const speakerButton = document.getElementById("speaker-button");
+  if (speakerEnabled) {
+    speakerButton.innerHTML = "Off"
+  } else {
+    speakerButton.innerHTML = "On"
+  }
+  speakerEnabled = !speakerEnabled
 }
 
 function switchLanguage() {

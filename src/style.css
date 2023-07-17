@@ -572,7 +572,7 @@ h1 {
 
 .item {
   text-align: center;
-  width: fit-content;
+  width: 170px;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
@@ -585,13 +585,14 @@ h1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-bottom: 10px;
   text-align: center;
+  height: 100%
 }
 
 /* Add a red background color to the cancel button */
 .cancel {
   padding: 10px;
+  margin-top: 20px;
   width: 100%;
   background-color: rgba(36, 171, 195, 0.7);
   cursor: pointer;
@@ -607,7 +608,7 @@ h1 {
 }
 
 /* Slider stuff */
-.slidecontainer {
+.slide {
   width: 100%;
 }
 .slider {
