@@ -13,7 +13,7 @@ A music visualizer created by a humble group of college students in recognition 
   - Open the terminal and run the following command: `npm run dev`. Note: `npm run build` will not work. However, the src folder can be deployed directly without needing a build.
 - Building Locally
   - No need to build - the src folder is ready to be deployed
-  - You can use server extensions to serve the src folder on a local HTTP server.
+  - You can use server extensions to serve the application on a local HTTP server.
     - VSCode: Live Server
       - Download "Live Server" extension
       - Right-click on `index.html` and select "Open with Live Server"
