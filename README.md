@@ -7,7 +7,7 @@ A music visualizer created by a humble group of college students in recognition 
 <hr/>
 
 **Developers:** Abel Lu, Christopher Lee, Luke Sbityakov  
-**Artist:** Anji
+**Artist:** Anjolie Baccay
 
 ### Note
 This application is optimized for landscape display on tablets and personal computers. The app *will work* on phones and smaller devices, but you may encounter some issues related to small screen size and native hardware.
@@ -90,7 +90,7 @@ Wolfpack Mirai 2023
 
 **デベロッパー：** Abel Lu, Christopher Lee, Luke Sbityakov
 
-**イラストレーター：** Anji
+**イラストレーター：** Anjolie Baccay
 
 ## 機能
 - **曲の選択肢**
