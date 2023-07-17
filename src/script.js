@@ -94,7 +94,7 @@ var currentLyricDiffId= SongList[0].lyricDiffId;
 // TextAlive Player を初期化
 var player = new Player({
   // トークンは https://developer.textalive.jp/profile で取得したものを使う
-  app: { token: "test" },
+  app: { token: "Pdy9v41sWiA1utfh" },
   mediaElement: document.querySelector("#media"),
   mediaBannerPosition: "top right"
 
