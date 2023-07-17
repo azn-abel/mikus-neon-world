@@ -499,7 +499,6 @@ function Volume(val) {
     if ( esc.keyCode == 27 ) {
       closeForm('myForm');
       closeForm('musicForm');
-      console.log('esced');
     };
   };
 
