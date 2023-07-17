@@ -572,7 +572,7 @@ h1 {
 
 .item {
   text-align: center;
-  width: 170px;
+  width: 125px;
   display: flex;
   flex-direction: column;
   padding-left: 20px;
