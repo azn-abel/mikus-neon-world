@@ -1,9 +1,9 @@
 ![image](https://github.com/Ramen-Noodle/Wolfpack-Mirai-2023/assets/66392457/6245fc50-6d68-4bbe-a924-ef2755dde43c)
 
-# Wolfpack Mirai 2023
+# Hatsune Miku's Neon World
 A music visualizer created by a humble group of college students in recognition of Hatsune Miku Magical Mirai 2023.
 
-[日本語はこちら](#wolfpack-mirai-2023---jp)
+[日本語はこちら](#初音ミクのネオン世界)
 <hr/>
 
 **Developers:** Abel Lu, Christopher Lee, Luke Sbityakov  
@@ -82,7 +82,7 @@ Wolfpack Mirai 2023
 
 <hr/>  
 
-# Wolfpack Mirai 2023 - JP
+# 初音ミクのネオン世界
 ただの大学生が初音ミクの「マジカルミライ２０２３」のために作った音楽ビジュアライザです
 
 **デベロッパー：** Abel Lu, Christopher Lee, Luke Sbityakov  
