@@ -359,9 +359,6 @@ function animate() {
 }
 
 function flipColors() {
-  console.log("flipped");
-  console.log( r1 / 255 + ", " + g1 / 255 + ", " + b1 / 255 );
-  console.log( r2 / 255 + ", " + g2 / 255 + ", " + b2 / 255 );
   if (red == r1) {
     red = r2;
   }

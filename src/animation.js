@@ -151,7 +151,6 @@ function barGraph(){
     var position = [];
     var val = Math.floor(-1 * window.innerWidth/100);
     for(var i = 0; i < window.innerWidth; i+= 100){
-        console.log(val);
         position.push(val);
         val += 1.5;
     }

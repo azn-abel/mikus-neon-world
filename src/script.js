@@ -290,7 +290,7 @@ document.querySelector("#control > a#stop").addEventListener("click", (e) => {
 /* シークバー */
 seekbar.addEventListener("click", (e) => {
   e.preventDefault();
-  if (player) {
+  if (player && player.isPlaying) {
     player.requestMediaSeek(
       (player.video.duration * e.offsetX) / seekbar.clientWidth
     );
