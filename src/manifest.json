@@ -1,5 +1,6 @@
 {
-    "name": "WPM 2023",
+    "short_name": "WPM 2023",
+    "name": "Wolfpack Mirai 2023",
     "version": "1.0.0",
     "description": "Music Visualizer for Hatsune Miku Magical Mirai 2023",
     "manifest_version": 2,
