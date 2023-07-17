@@ -531,7 +531,7 @@ button {
   display: none;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   background-color: white;
   max-width: 800px;
   z-index: 9;

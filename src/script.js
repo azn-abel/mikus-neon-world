@@ -493,9 +493,10 @@ function closeForm(formName) {
   document.querySelector("#settings > a#musicButton").className = "";
 }
 
-function Volume(val) {
-  audioElement.volume = val/100;
-  console.log(val);
+const slider = document.getElementById("myRange");
+slider.oninput = function Volume(e) {
+  audioElement.volume = e.target.value/100;
+  console.log(e.target.value);
 }
 
   window.onkeydown = function( esc ) {
