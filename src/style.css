@@ -457,8 +457,17 @@ button {
   pointer-events: none;
   position: fixed;
   left: 60vw;
-  bottom: 10vh;
+  bottom: 12.5vh;
   height: 80vh;
+  z-index: 3;
+}
+
+.braid-image {
+  pointer-events: none;
+  position: fixed;
+  left: 62.7vw;
+  bottom: 18vh;
+  height: 70vh;
   z-index: 2;
 }
 
@@ -466,7 +475,7 @@ button {
   pointer-events: none;
   position: fixed;
   bottom: 8vh;
-  left: 60vw;
+  left: 61vw;
   height: 20vh;
   z-index: 2;
 }
