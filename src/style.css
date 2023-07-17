@@ -328,9 +328,9 @@ canvas {
   text-shadow: 2px 2px 3px #e4215a;
   user-select: none;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   left: 8vw;
-  top: 77vh;
+  top: 77%;
   max-width: 52vw;
   
   opacity: 1;
@@ -406,7 +406,7 @@ canvas {
   overflow: hidden;
   /*background-color: #333;*/
   color: #ddd;
-  position: absolute;
+  position: fixed;
   right: 0;
   left: 0;
   z-index: 4;
