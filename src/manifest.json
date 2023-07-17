@@ -12,7 +12,7 @@
       "activeTab",
       "storage"
     ],
-    "start_url": ".",
+    "start_url": "./?mode=pwa",
     "display": "fullscreen",
     "theme_color": "#000000",
     "background_color": "#ffffff"

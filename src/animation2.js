@@ -258,8 +258,13 @@ window.onresize = function () {
     const userAgent = navigator.userAgent.toLowerCase();
     const isIOS = /iphone|ipad|ipod/.test(userAgent);
 
+    let params = new URLSearchParams(document.location.search);
+    const mode = params.get("mode")
+
     if (isIOS) {
-        width = width * 2
+        if (mode && mode === "pwa") {
+            width = width * 2
+        }
     }
 
 
