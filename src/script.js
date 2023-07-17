@@ -144,6 +144,7 @@ function beginPlayback() {
     /* 楽曲が変わったら呼ばれる */
     onAppMediaChange() {
       // 画面表示をリセット
+      window.playerLoaded = false;
       overlay.className = "";
       let loadingCircle = document.getElementById('loader');
       loadingCircle.style.visibility = ""
@@ -170,15 +171,17 @@ function beginPlayback() {
   
     /* 再生コントロールができるようになったら呼ばれる */
     onTimerReady() {
-      overlay.className = "ready";
+      window.playerLoaded = true;
       let loadingCircle = document.getElementById('loader');
-      loadingCircle.style.visibility = "hidden"
       let overlayText = document.getElementById('overlay-text');
-      if (currentLanguage === "en") {
-        overlayText.textContent = 'Click to enter.';
-      }
-      else {
-        overlayText.textContent = 'クリックして進む';
+      if (window.textureLoaded) {
+        loadingCircle.style.visibility = "hidden";
+        overlay.className = "ready";
+        if (currentLanguage === "en") {
+          overlayText.textContent = 'Click to enter.';
+        } else {
+          overlayText.textContent = 'クリックして進む';
+        }
       }
       console.log(navigator.userAgent)
       document.querySelector("#control > a#play").className = "";
@@ -449,8 +452,8 @@ function getBarColors() {
   b1 = color1 % 0x100;
   b2 = color2 % 0x100;
 
-  console.log( r1 + ", " + g1 + ", " + b1 );
-  console.log( r2 + ", " + g2 + ", " + b2 );
+  console.info( "Initial Beatbar RGB: (" + r1 + ", " + g1 + ", " + b1 + "), (" + r2 + ", " + g2 + ", " + b2 + ")");
+
 }
 
 function closeForm(formName) {

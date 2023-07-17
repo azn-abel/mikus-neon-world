@@ -133,9 +133,10 @@ cube4.scale.x = 10;
 cube5.scale.x = 10;
 cube6.scale.x = 10;
 
+const loadManager = new THREE.LoadingManager()
+const textureLoader = new THREE.TextureLoader(loadManager);
 
-const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load( './images/city.png' );
+const texture = textureLoader.load( './images/city.png');
 const cloud = textureLoader.load('./images/cloud1cropped.png');
 const cloud2 = textureLoader.load('./images/cloud2cropped.png');
 const cloud3 = textureLoader.load('./images/cloud3cropped.png');
@@ -148,12 +149,30 @@ const building5 = textureLoader.load('./images/building5.png');
 const building6 = textureLoader.load('./images/building6.png');
 const building7 = textureLoader.load('./images/building7.png');
 
+loadManager.onLoad = () => {
+    window.textureLoaded = true;
+    console.info("Textures loaded successfully.")
+
+    let loadingCircle = document.getElementById('loader');
+    let overlayText = document.getElementById('overlay-text');
+    let overlay = document.querySelector("#overlay");
+
+    if (window.playerLoaded) {
+        loadingCircle.style.visibility = "hidden";
+        overlay.className = "ready";
+        if (currentLanguage === "en") {
+            overlayText.textContent = 'Click to enter.';
+        } else {
+            overlayText.textContent = 'クリックして進む';
+        }
+    }
+}
+
 texture.encoding = THREE.sRGBEncoding;
 cloud.encoding = THREE.sRGBEncoding;
 cloud2.encoding = THREE.sRGBEncoding;
 cloud3.encoding = THREE.sRGBEncoding;
 cloud4.encoding = THREE.sRGBEncoding;
-
 building1.encoding = THREE.sRGBEncoding;
 building2.encoding = THREE.sRGBEncoding;
 building3.encoding = THREE.sRGBEncoding;
@@ -346,8 +365,6 @@ function animate() {
         cloud2Mesh.position.x -= diff * 2.3;
         cloud3Mesh.position.x -= diff * 1.6;
         cloud4Mesh.position.x -= diff * 2.9;
-    } else {
-        console.log("hidden");
     }
     // controls.update();
     // Change cube color
