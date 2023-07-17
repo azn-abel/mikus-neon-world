@@ -202,21 +202,21 @@ const building7Mesh = new THREE.Mesh( building7Geometry, building7Material );
 
 // Cloud positions
 cloudMesh.position.set(20,35,-5);
-cloud2Mesh.position.set(-10,12,-20);
-cloud3Mesh.position.set(50,25,-5);
-cloud4Mesh.position.set(15, 45, -15);
+cloud2Mesh.position.set(-80,12,-15);
+cloud3Mesh.position.set(50,25,-11);
+cloud4Mesh.position.set(105, 45, -9);
 scene.add(cloudMesh);
 scene.add(cloud2Mesh);
 scene.add(cloud3Mesh);
 scene.add(cloud4Mesh);
 
-building1Mesh.position.set(90, -10, -10);
-building2Mesh.position.set(0, -10, -10);
-building3Mesh.position.set(-30, -10 ,-10);
-building4Mesh.position.set(-50, -10, -10);
-building5Mesh.position.set(130, -10, -10);
-building6Mesh.position.set(60, -10, -10);
-building7Mesh.position.set(-110, -10, -10);
+building1Mesh.position.set(-62 , 0, -16);
+building2Mesh.position.set(20, -15, -5);
+building3Mesh.position.set(80, 0 ,-16);
+building4Mesh.position.set(115, 20, -21);
+building5Mesh.position.set(-110, 0, -10);
+building6Mesh.position.set(-40, -5, -12);
+building7Mesh.position.set(105, -10, -8);
 scene.add(building1Mesh);
 scene.add(building2Mesh);
 scene.add(building3Mesh);
