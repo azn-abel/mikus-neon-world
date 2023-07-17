@@ -6,17 +6,17 @@
     "manifest_version": 2,
     "icons": [
       {
-        "src": "vite.svg",
+        "src": "./thumbnail.png",
         "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
         "type": "image/x-icon"
       },
       {
-        "src": "vite.svg",
+        "src": "./thumbnail.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "vite.svg",
+        "src": "./thumbnail.png",
         "type": "image/png",
         "sizes": "512x512"
       }
