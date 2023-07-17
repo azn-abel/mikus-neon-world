@@ -1,4 +1,6 @@
-﻿# Wolfpack Mirai 2023
+![image](https://github.com/Ramen-Noodle/Wolfpack-Mirai-2023/assets/66392457/6245fc50-6d68-4bbe-a924-ef2755dde43c)
+
+# Wolfpack Mirai 2023
 A music visualizer created by a humble group of college students in recognition of Hatsune Miku Magical Mirai 2023.
 
 [日本語はこちら](#wolfpack-mirai-2023---jp)
@@ -6,6 +8,18 @@ A music visualizer created by a humble group of college students in recognition 
 
 **Developers:** Abel Lu, Christopher Lee, Luke Sbityakov  
 **Artist:** Anji
+
+### Features
+- **Song Compatibility**
+  - Compatible with all six songs presented to competitors.
+- **Music Visualization**
+  - Glowing animations that match the intensity of the songs, including six glowing bars representing the six songs featured.
+- **Custom Artwork**
+  - Features a custom digital drawing of Hatsune Miku in this year's outfit, as well as custom assets used to create an elaborate backdrop
+- **User Freedom**
+  - Users are given options to customize the experience to make it their own. This includes enabling/disabling certain animations and changing the scene colors.
+- **Miku on Top of the World**
+  - As reference to her song: *World is Mine*, Miku is depicted on top of a skyscraper, broadcasting her voice into the night sky.
 
 ### How to Run
 - **Testing Locally**
@@ -24,18 +38,6 @@ A music visualizer created by a humble group of college students in recognition 
 - **Deployment**
   - The app is currently deployed at https://azn-abel.github.io/mikus-neon-world from the `deploy` branch
   - The `deploy` branch is ready to be deployed on HTTP servers
-
-### Features
-- **Song Compatibility**
-  - Compatible with all six songs presented to competitors.
-- **Music Visualization**
-  - Glowing animations that match the intensity of the songs, including six glowing bars representing the six songs featured.
-- **Custom Artwork**
-  - Features a custom digital drawing of Hatsune Miku in this year's outfit, as well as custom assets used to create an elaborate backdrop
-- **User Freedom**
-  - Users are given options to customize the experience to make it their own. This includes enabling/disabling certain animations and changing the scene colors.
-- **Miku on Top of the World**
-  - As reference to her song: *World is Mine*, Miku is depicted on top of a skyscraper, broadcasting her voice into the night sky.
 
 ### Letter to Judging Committee
 
