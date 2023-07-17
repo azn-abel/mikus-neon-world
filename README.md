@@ -27,7 +27,7 @@ A music visualizer created by a humble group of college students in recognition 
   - Open the terminal and run `npm install` to install dependencies needed for testing
   - Run `npm run dev` to start a local server. Note: `npm run build` will not work. However, the src folder can be deployed directly without needing a build.
   - Press `Ctrl + c` in the terminal session to stop the server.
-- **Building Locally**
+- **Building and Serving Locally**
   - No need to build - the src folder is ready to be deployed
   - You can use server extensions to serve the application on a local HTTP server.
     - VSCode: Live Server
