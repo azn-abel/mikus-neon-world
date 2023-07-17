@@ -9,7 +9,16 @@ A music visualizer created by a humble group of college students in recognition 
 **Developers:** Abel Lu, Christopher Lee, Luke Sbityakov  
 **Artist:** Anji
 
-### Features
+### Note
+This application is optimized for landscape display on tablets and personal computers. The app *will work* on phones and smaller devices, but you may encounter some issues related to small screen size and native hardware.
+
+## Table of Contents
+- [Features](#features)
+- [User Guide](#user-guide)
+- [Build and Deploy](#build-and-deploy)
+- [Letter to Judging Committee](#letter-to-judging-committee)
+
+## Features
 - **Song Compatibility**
   - Compatible with all six songs presented to competitors.
 - **Music Visualization**
@@ -20,8 +29,22 @@ A music visualizer created by a humble group of college students in recognition 
   - Users are given options to customize the experience to make it their own. This includes enabling/disabling certain animations and changing the scene colors.
 - **Miku on Top of the World**
   - As reference to her song: *World is Mine*, Miku is depicted on top of a skyscraper, broadcasting her voice into the night sky.
+ 
+## User Guide
+- **Installation**
+  - **Personal Computers**
+    - Click here: https://azn-abel.github.io/mikus-neon-world
+  - **Tablet and Phone Users**
+    - Click here: https://azn-abel.github.io/mikus-neon-world
+    - **Optional:** Add the Application to Home Screen
+      - Safari (iOS): Tap the share icon, then tap "Add to Home Screen"
+      - Chrome (Android): Tap the three dots (settings menu), then tap "Add to Home Screen"
+- **Use**
+  - Click the Play button to start listening!
+  - Volume and visual-related settings can be found by clicking the gear icon
+  - To switch songs, click the music notes icon
 
-### How to Run
+## Build and Deploy
 - **Testing Locally**
   - Clone the repository
   - Open the terminal and run `npm install` to install dependencies needed for testing
@@ -41,7 +64,7 @@ A music visualizer created by a humble group of college students in recognition 
   - The app is currently deployed at https://azn-abel.github.io/mikus-neon-world from the `deploy` branch
   - The `deploy` branch is ready to be deployed on HTTP servers
 
-### Letter to Judging Committee
+## Letter to Judging Committee
 
 Hello Judging Committee,
 
@@ -70,7 +93,7 @@ Wolfpack Mirai 2023
 
 **イラストレーター：** Anji
 
-### 機能
+## 機能
 - **曲の選択肢**
   - このコンテストの６曲を全部使える 
 - **音楽の見える化** 
@@ -83,7 +106,7 @@ Wolfpack Mirai 2023
   - ワールドイズマインの言葉
 
 
-### 審査員への言葉
+## 審査員への言葉
 
 審査員の皆様、
 
