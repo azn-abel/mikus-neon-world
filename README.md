@@ -8,10 +8,10 @@ A music visualizer created by a humble group of college students in recognition 
 **Artist:** Anji
 
 ### How to Run
-- Testing Locally
+- **Testing Locally**
   - Clone the repository
   - Open the terminal and run the following command: `npm run dev`. Note: `npm run build` will not work. However, the src folder can be deployed directly without needing a build.
-- Building Locally
+- **Building Locally**
   - No need to build - the src folder is ready to be deployed
   - You can use server extensions to serve the application on a local HTTP server.
     - VSCode: Live Server
@@ -21,7 +21,7 @@ A music visualizer created by a humble group of college students in recognition 
       - Right-click on the `index.html` file
       - Hover over "Open In"
       - Hover over "Browser", and select your desired browser
-- Deployment
+- **Deployment**
   - The app is currently deployed at https://azn-abel.github.io/mikus-neon-world from the `deploy` branch
   - The `deploy` branch is ready to be deployed on HTTP servers
 
