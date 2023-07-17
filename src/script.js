@@ -146,10 +146,10 @@ function beginPlayback() {
       loadingCircle.style.visibility = ""
       let overlayText = document.getElementById('overlay-text');
       if (currentLanguage === "en") {
-        overlayText.textContent = 'Loading Player...';
+        overlayText.textContent = 'Loading Player';
       }
       else {
-        overlayText.textContent = '読み込み中...';
+        overlayText.textContent = '読み込み中';
       }
       resetChars();
     },
@@ -399,10 +399,10 @@ function changeSong(songIndex) {
   let loadingCircle = document.getElementById('loader');
   loadingCircle.style.visibility = ""
   if (currentLanguage == "en") {
-    overlayText.textContent = 'Loading Player...';
+    overlayText.textContent = 'Loading Player';
   }
   else {
-    overlayText.textContent = '読み込み中...';
+    overlayText.textContent = '読み込み中';
   }
   document.querySelector("#control > a#play").className = "disabled";
   document.querySelector("#control > a#stop").className = "disabled";
@@ -512,7 +512,7 @@ function switchLanguage() {
     // document.getElementById("both").innerHTML = "両方";
     document.getElementById("beatbar-header").innerHTML = "ビートバーの色";
     document.getElementById("lyrics-header").innerHTML = "歌詞の色";
-    document.getElementById("overlay-text").innerHTML = "読み込み中...";
+    document.getElementById("overlay-text").innerHTML = "読み込み中";
     document.getElementById("language-select").innerHTML = "言語";
     document.getElementById("volume-label").innerHTML = "音量";
 
@@ -545,7 +545,7 @@ function switchLanguage() {
     // document.getElementById("both").innerHTML = "Both";
     document.getElementById("beatbar-header").innerHTML = "Beatbar Color";
     document.getElementById("lyrics-header").innerHTML = "Lyrics Color";
-    document.getElementById("overlay-text").innerHTML = "Loading Player...";
+    document.getElementById("overlay-text").innerHTML = "Loading Player";
     document.getElementById("language-select").innerHTML = "Language";
     document.getElementById("volume-label").innerHTML = "Volume";
 
