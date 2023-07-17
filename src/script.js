@@ -541,6 +541,8 @@ function switchLanguage() {
 
     document.getElementById("change-song-header").innerHTML = "曲変化";
     document.getElementById("cancelButton").innerHTML = "キャンセル";
+    document.getElementById("glow-header").innerHTML = "明かり効果";
+    document.getElementById("speaker-header").innerHTML = "スピーカーアニメーション";
 
 
     document.getElementById("kingJack").innerHTML = "king妃jack躍";
@@ -574,6 +576,8 @@ function switchLanguage() {
 
     document.getElementById("change-song-header").innerHTML = "Change Song";
     document.getElementById("cancelButton").innerHTML = "Cancel";
+    document.getElementById("glow-header").innerHTML = "Glow Effect";
+    document.getElementById("speaker-header").innerHTML = "Speaker Bounce";
 
     document.getElementById("kingJack").innerHTML = "king ki jack yaku";
     document.getElementById("toLive").innerHTML = "To live";
