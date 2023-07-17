@@ -35,7 +35,7 @@ A music visualizer created by a humble group of college students in recognition 
 - **User Freedom**
   - Users are given options to customize the experience to make it their own. This includes enabling/disabling certain animations and changing the scene colors.
 - **Miku on Top of the World**
-  - A reference to her song: *World is Mine*
+  - As reference to her song: *World is Mine*, Miku is depicted on top of a skyscraper, broadcasting her voice into the night sky.
 
 ### Letter to Judging Committee
 
@@ -67,15 +67,15 @@ Wolfpack Mirai 2023
 **イラストレーター：** Anji
 
 ### 機能
-- 曲の選択肢
+- **曲の選択肢**
   - このコンテストの６曲を全部使える 
-- 音楽の見える化 
+- **音楽の見える化** 
   - 音楽の強度に合わせて明かる6本のビートバー
-- カスタムイラスト
+- **カスタムイラスト**
   - 今年の衣装を着てる初音ミクと美しい背景
-- 自由に使える
+- **自由に使える**
   - ユーザーは自由に使えるためのオプションが付いてる。例えばアニメーションをエネーブルやディセーブルしたり、シーンを変えたりすることはできる
-- 初音ミクは世界で一番！
+- **初音ミクは世界で一番！**
   - ワールドイズマインの言葉
 
 
