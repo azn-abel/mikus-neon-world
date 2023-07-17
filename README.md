@@ -133,7 +133,7 @@ Wolfpack Mirai 2023
   - サーバー拡張部分でローカルのHTTPサーバーでアプリをサーブできる
     - VSCode: Live Server
       - 「Live Server」っていう拡張部分をダウンロードする
-      - `index.html`を右クリックして"Open with Live Server"を選択する
+      - `index.html`を右クリックして「Open with Live Server」を選択する
     - WebStorm: 作り付けプレビュー
       - `index.html`を右クリックする
       - 「このアプリケーションで開く」にマウスを合わせる
