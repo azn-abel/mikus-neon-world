@@ -31,7 +31,7 @@ This application is optimized for landscape display on tablets and personal comp
   - As reference to her song: *World is Mine*, Miku is depicted on top of a skyscraper, broadcasting her voice into the night sky.
  
 ## User Guide
-- **Installation**
+- **How to access**
   - **Personal Computers**
     - Click here: https://azn-abel.github.io/mikus-neon-world
   - **Tablet and Phone Users**
@@ -39,7 +39,7 @@ This application is optimized for landscape display on tablets and personal comp
     - **Optional:** Add the Application to Home Screen
       - Safari (iOS): Tap the share icon, then tap "Add to Home Screen"
       - Chrome (Android): Tap the three dots (settings menu), then tap "Add to Home Screen"
-- **Use**
+- **How to use**
   - Click the Play button to start listening!
   - Volume and visual-related settings can be found by clicking the gear icon
   - To switch songs, click the music notes icon
