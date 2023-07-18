@@ -45,12 +45,8 @@ This application is optimized for landscape display on tablets and personal comp
   - To switch songs, click the music notes icon
 
 ## Build and Deploy
-- **Testing Locally**
-  - Clone the repository
-  - Open the terminal and run `npm install` to install dependencies needed for testing
-  - Run `npm run dev` to start a local server. Note: `npm run build` will not work. The src folder is meant to be deployed directly.
-  - Press `Ctrl + c` in the terminal session to stop the server.
 - **Building and Serving Locally**
+  - Clone the `deploy` branch of the repository.
   - You can use server extensions to serve the application on a local HTTP server.
     - VSCode: Live Server
       - Download "Live Server" extension
@@ -124,12 +120,8 @@ Wolfpack Mirai 2023
   - ノートアイコンをクリックして曲の変化できる
 
 ## ビルドとデプロイ
-- **ローカルテスト**
-  - レポジトリをクローンする
-  - ターミナルを開いて`npm install`実行してテストに必要な依存性をインストールする
-  - `npm run dev`を実行してローカルサーバーを起動する。注意：`npm run build`では起動しない。srcフォルダが直接デプロイするべきです。
-  - ターミナルで`Ctrl + c`押してサーバーを切る
 - **ローカルでビルドとサーブ**
+  - レポジトリをクローンする (`deploy`ブランチ)
   - サーバー拡張部分でローカルのHTTPサーバーでアプリをサーブできる
     - VSCode: Live Server
       - 「Live Server」っていう拡張部分をダウンロードする
