@@ -25,6 +25,7 @@
       "activeTab",
       "storage"
     ],
+    "orientation": "landscape",
     "start_url": "./?mode=pwa",
     "display": "fullscreen",
     "theme_color": "#000000",
