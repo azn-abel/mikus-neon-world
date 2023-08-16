@@ -3,6 +3,8 @@
 # Hatsune Miku's Neon World
 A music visualizer web app built for the Hatsune Miku Magical Mirai 2023 programming competition.
 
+Access it here: https://azn-abel.github.io/mikus-neon-world
+
 [日本語はこちら](#初音ミクのネオン世界)
 <hr/>
 
