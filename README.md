@@ -1,7 +1,7 @@
 ![image](https://github.com/Ramen-Noodle/Wolfpack-Mirai-2023/assets/66392457/6245fc50-6d68-4bbe-a924-ef2755dde43c)
 
 # Hatsune Miku's Neon World
-A music visualizer created by a humble group of college students in recognition of Hatsune Miku Magical Mirai 2023.
+A music visualizer web app built for the Hatsune Miku Magical Mirai 2023 programming competition.
 
 [日本語はこちら](#初音ミクのネオン世界)
 <hr/>
@@ -9,14 +9,14 @@ A music visualizer created by a humble group of college students in recognition 
 **Developers:** Abel Lu, Christopher Lee, Luke Sbityakov  
 **Artist:** Anjolie Baccay
 
-### Note
-This application is optimized for landscape display on tablets and personal computers. The app *will work* on phones and smaller devices, but you may encounter some issues related to small screen size and native hardware.
+### Notes
+- This application is optimized for landscape display on tablets and personal computers. The app *will work* on phones and smaller devices, but you may encounter some issues related to small screen size and native hardware.
+- **Disclaimer:** the source code for this project should NOT be used as a model/foundation for similar applications, as the project was severely rushed. The app works just fine, but we didn't focus on code quality and best practices as much as we'd wanted to.
 
 ## Table of Contents
 - [Features](#features)
 - [User Guide](#user-guide)
 - [Build and Deploy](#build-and-deploy)
-- [Letter to Judging Committee](#letter-to-judging-committee)
 
 ## Features
 - **Song Compatibility**
@@ -59,23 +59,6 @@ This application is optimized for landscape display on tablets and personal comp
   - The app is currently deployed at https://azn-abel.github.io/mikus-neon-world from the `deploy` branch
   - The `deploy` branch is ready to be deployed on HTTP servers
 
-## Letter to Judging Committee
-
-Hello Judging Committee,
-
-We are college computer science students in America with keen interests in
-Japanese culture and media. Earlier this summer, we learned about the Magical
-Mirai Programming Competition from Hatsune Miku's English Facebook page. We 
-entered because we saw it as an opportunity not only to learn about web
-development, but also to express our appreciation for Japanese culture and
-Hatsune Miku.
-
-Thank you for the time and efforts you all have dedicated to this competition. We
-look forward to hearing the results!
-
-All the best,  
-Wolfpack Mirai 2023
-
 <hr/>  
 
 # 初音ミクのネオン世界
@@ -91,7 +74,6 @@ Wolfpack Mirai 2023
 - [機能](#機能)
 - [ユーザーガイド](#ユーザーガイド)
 - [ビルドとデプロイ](#ビルドとデプロイ)
-- [審査員への言葉](#審査員への言葉)
 
 ## 機能
 - **曲の選択肢**
@@ -133,14 +115,3 @@ Wolfpack Mirai 2023
 - **デプロイ**
   - 現在このアプリはhttps://azn-abel.github.io/mikus-neon-world の`deploy`ブランチでデプロイされている
   - その`deploy`ブランチはHTTPサーバーにデプロイすることができる
-
-## 審査員への言葉
-
-審査員の皆様、
-
-僕たちは日本の文化やメディアに興味あるアメリカ人の大学生です。数月前、初音ミクの英語フェースブックで「マジカルミライ２０２３プログラミング・コンテスト」を知りました。このコンテストはWEBプログラミングの勉強になるだけではなく、日本文化、そして初音ミクへの鑑賞を表示する機会だと思って参加しました。
-
-このコンテストのための時間と努力ありがとうございます。結果が出る時をお楽しみにしています！
-
-Wolfpack Mirai 2023のみんなより
-
